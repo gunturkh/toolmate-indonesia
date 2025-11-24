@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project References | PT. Toolmate Technologies Indonesia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { navy: '#1B1F50', gold: '#C5A02F', blue: '#2563EB' }
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-slate-700 bg-white antialiased flex flex-col min-h-screen">
+
+    <!-- NAV -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur shadow-md border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-24 items-center">
+                <a href="index.html" class="flex items-center gap-2">
+                    <div class="relative">
+                        <div class="text-4xl font-extrabold tracking-tighter text-brand-navy italic">TTI</div>
+                        <div class="absolute -top-2 -right-2 w-8 h-8 border-t-4 border-r-4 border-brand-navy rounded-tr-full"></div>
+                        <div class="absolute -bottom-1 -left-1 w-12 h-2 bg-brand-gold rounded-full transform -skew-x-12"></div>
+                    </div>
+                    <div class="hidden md:flex flex-col ml-3">
+                        <span class="font-bold text-sm text-brand-navy uppercase tracking-wide leading-tight">PT Toolmate Technologies</span>
+                        <span class="font-bold text-xs text-brand-gold uppercase tracking-wide leading-tight">Indonesia</span>
+                    </div>
+                </a>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-sm font-semibold text-slate-600 hover:text-brand-navy">Home</a>
+                    <a href="services.html" class="text-sm font-semibold text-slate-600 hover:text-brand-navy">Engineering Services</a>
+                    <a href="products.html" class="text-sm font-semibold text-slate-600 hover:text-brand-navy">Bio Tech</a>
+                    <a href="projects.html" class="text-sm font-bold text-brand-navy border-b-2 border-brand-gold">Projects</a>
+                    <a href="index.html#contact" class="px-5 py-2.5 text-sm font-bold text-white bg-brand-navy hover:bg-blue-900 rounded shadow-lg transition">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="bg-slate-900 pt-32 pb-16 text-center">
+        <h1 class="text-4xl font-bold text-white mb-2">Project References</h1>
+        <p class="text-slate-400">Proven track record with multinational clients in Batam.</p>
+    </div>
+
+    <!-- PROJECTS GRID -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        
+        <!-- Filters (Optional Visual) -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12">
+            <span class="px-4 py-2 bg-brand-navy text-white rounded-full text-sm font-bold">All Projects</span>
+            <span class="px-4 py-2 bg-slate-100 text-slate-600 rounded-full text-sm font-semibold">WWTP</span>
+            <span class="px-4 py-2 bg-slate-100 text-slate-600 rounded-full text-sm font-semibold">HVAC</span>
+            <span class="px-4 py-2 bg-slate-100 text-slate-600 rounded-full text-sm font-semibold">Construction</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Project Card 1 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-slate-100 hover:-translate-y-1 transition duration-300">
+                <div class="h-64 bg-slate-200 relative">
+                     <img src="https://images.unsplash.com/photo-1590959651373-a3db0f38a961?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
+                     <div class="absolute top-4 left-4 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded">WWTP</div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-brand-navy">Panbil Industrial Park</h3>
+                    <p class="text-sm text-brand-gold font-bold uppercase mb-2">WWTP Expansion</p>
+                    <p class="text-slate-600 text-sm">Capacity expansion project utilizing MBR & MBBR systems for industrial wastewater management.</p>
+                </div>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-slate-100 hover:-translate-y-1 transition duration-300">
+                <div class="h-64 bg-slate-200 relative">
+                     <img src="https://images.unsplash.com/photo-1584622412327-198eaca60618?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
+                     <div class="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded">HVAC</div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-brand-navy">PT. Batam Teknik (Lion Air)</h3>
+                    <p class="text-sm text-brand-gold font-bold uppercase mb-2">Hanggar Warehouse</p>
+                    <p class="text-slate-600 text-sm">Complete HVAC works including large scale ducting installation for aircraft maintenance hangar.</p>
+                </div>
+            </div>
+
+            <!-- Project Card 3 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-slate-100 hover:-translate-y-1 transition duration-300">
+                <div class="h-64 bg-slate-200 relative">
+                     <img src="https://images.unsplash.com/photo-1632661859229-4f595412df16?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
+                     <div class="absolute top-4 left-4 bg-yellow-600 text-white text-xs font-bold px-2 py-1 rounded">Civil</div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-brand-navy">PT. Caterpillar Indonesia</h3>
+                    <p class="text-sm text-brand-gold font-bold uppercase mb-2">Epoxy Painting</p>
+                    <p class="text-slate-600 text-sm">Industrial grade epoxy flooring application for heavy machinery manufacturing plant.</p>
+                </div>
+            </div>
+
+            <!-- Project Card 4 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-slate-100 hover:-translate-y-1 transition duration-300">
+                <div class="h-64 bg-slate-200 relative">
+                     <img src="https://images.unsplash.com/photo-1542336391-ae2936d8efe4?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
+                     <div class="absolute top-4 left-4 bg-brand-navy text-white text-xs font-bold px-2 py-1 rounded">Structure</div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-brand-navy">PT. Techwah Batam</h3>
+                    <p class="text-sm text-brand-gold font-bold uppercase mb-2">Boiler Chimney</p>
+                    <p class="text-slate-600 text-sm">Fabrication and installation of industrial boiler chimney system using heavy cranes.</p>
+                </div>
+            </div>
+
+             <!-- Project Card 5 -->
+             <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-slate-100 hover:-translate-y-1 transition duration-300">
+                <div class="h-64 bg-slate-200 relative">
+                     <img src="https://images.unsplash.com/photo-1618090584126-129cd1f3fbaa?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
+                     <div class="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded">HVAC</div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-brand-navy">PT. Sanmina SCI</h3>
+                    <p class="text-sm text-brand-gold font-bold uppercase mb-2">HVAC System</p>
+                    <p class="text-slate-600 text-sm">Installation of chillers and precision air conditioning for electronics manufacturing floor.</p>
+                </div>
+            </div>
+
+             <!-- Project Card 6 -->
+             <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-slate-100 hover:-translate-y-1 transition duration-300">
+                <div class="h-64 bg-slate-200 relative">
+                     <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
+                     <div class="absolute top-4 left-4 bg-yellow-600 text-white text-xs font-bold px-2 py-1 rounded">M&E</div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-brand-navy">PT. Rapala VMC</h3>
+                    <p class="text-sm text-brand-gold font-bold uppercase mb-2">Renovation & M&E</p>
+                    <p class="text-slate-600 text-sm">Full facility renovation including flooring works and M&E (Mechanical & Electrical) installation.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- DOWNLOAD SECTION -->
+        <div class="mt-20 bg-brand-navy rounded-xl p-8 md:p-12 text-white text-center">
+            <h3 class="text-2xl font-bold mb-4">Download Full Project List</h3>
+            <p class="mb-8 text-blue-100">Get the detailed reference list including project values and timelines.</p>
+            <!-- REPLACE HREF WITH YOUR GOOGLE DRIVE LINK -->
+            <a href="YOUR_GOOGLE_DRIVE_LINK_HERE" target="_blank" class="inline-flex items-center bg-brand-gold text-brand-navy font-bold px-6 py-3 rounded hover:bg-white transition">
+                <i class="fas fa-download mr-2"></i> Download Reference List (PDF)
+            </a>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 py-8 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-sm">&copy; 2025 PT Toolmate Technologies Indonesia.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | PT. Toolmate Technologies Indonesia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { navy: '#1B1F50', gold: '#C5A02F', bio: '#4ADE80', biocon: '#15803d' }
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-slate-700 bg-white antialiased flex flex-col min-h-screen">
+
+    <!-- NAV -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur shadow-md border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-24 items-center">
+                <a href="index.html" class="flex items-center gap-2">
+                    <div class="relative">
+                        <div class="text-4xl font-extrabold tracking-tighter text-brand-navy italic">TTI</div>
+                        <div class="absolute -top-2 -right-2 w-8 h-8 border-t-4 border-r-4 border-brand-navy rounded-tr-full"></div>
+                        <div class="absolute -bottom-1 -left-1 w-12 h-2 bg-brand-gold rounded-full transform -skew-x-12"></div>
+                    </div>
+                    <div class="hidden md:flex flex-col ml-3">
+                        <span class="font-bold text-sm text-brand-navy uppercase tracking-wide leading-tight">PT Toolmate Technologies</span>
+                        <span class="font-bold text-xs text-brand-gold uppercase tracking-wide leading-tight">Indonesia</span>
+                    </div>
+                </a>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-sm font-semibold text-slate-600 hover:text-brand-navy">Home</a>
+                    <a href="services.html" class="text-sm font-semibold text-slate-600 hover:text-brand-navy">Engineering Services</a>
+                    <a href="products.html" class="text-sm font-bold text-green-600 border-b-2 border-green-500">Bio Tech</a>
+                    <a href="projects.html" class="text-sm font-semibold text-slate-600 hover:text-brand-navy">Projects</a>
+                    <a href="index.html#contact" class="px-5 py-2.5 text-sm font-bold text-white bg-brand-navy hover:bg-blue-900 rounded shadow-lg transition">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="bg-green-900 pt-32 pb-20 text-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/leaf.png')]"></div>
+        <div class="relative z-10">
+            <span class="inline-block py-1 px-3 rounded-full bg-green-700 text-green-100 text-xs font-bold uppercase mb-4">Naturelabs Biotech</span>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Biology Genesis</h1>
+            <p class="text-green-100 max-w-2xl mx-auto">Natural Bio Technology Solution for Industrial Waste Water Treatment.</p>
+        </div>
+    </div>
+
+    <!-- PRODUCT INFO -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <div>
+                <h2 class="text-3xl font-bold text-brand-biocon mb-6">What is Biology Genesis?</h2>
+                <p class="text-slate-600 mb-6 leading-relaxed">
+                    Biology Genesis is a group of human-friendly and beneficial bacteria & yeast. It is a natural culture without harsh chemical mixtures. It is certified safe, non-toxic, and free of pathogenic bacteria.
+                </p>
+                <h3 class="font-bold text-lg mb-3">Major Benefits:</h3>
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-start"><i class="fas fa-check-circle text-brand-bio mt-1 mr-3"></i> Reduces BOD, COD, TSS and Sludge volume</li>
+                    <li class="flex items-start"><i class="fas fa-check-circle text-brand-bio mt-1 mr-3"></i> Instantly eliminates bad odor (Ammonia/H2S)</li>
+                    <li class="flex items-start"><i class="fas fa-check-circle text-brand-bio mt-1 mr-3"></i> Restores ecological balance in wastewater ponds</li>
+                    <li class="flex items-start"><i class="fas fa-check-circle text-brand-bio mt-1 mr-3"></i> Reduces energy cost (efficiency in sewage treatment)</li>
+                </ul>
+            </div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?auto=format&fit=crop&w=800&q=80" class="rounded-lg shadow-xl mb-6">
+                <div class="bg-green-50 p-4 rounded-lg border border-green-100">
+                    <h4 class="font-bold text-green-800 mb-2">Wide Range of Application:</h4>
+                    <p class="text-sm text-green-700">Hotels, Restaurants (Grease Trap), Rubber Mills, Palm Oil Mills (POME), Hospitals, Farms, and Municipal Sewage.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- DOSAGE TABLE (From PDF) -->
+        <div class="mt-20">
+            <h2 class="text-2xl font-bold text-center mb-8">Application Guide & Dosage</h2>
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white border border-slate-200 text-sm">
+                    <thead class="bg-brand-navy text-white">
+                        <tr>
+                            <th class="py-3 px-4 text-left">Application</th>
+                            <th class="py-3 px-4 text-left">System</th>
+                            <th class="py-3 px-4 text-left">Standard Dosage (Maintenance)</th>
+                            <th class="py-3 px-4 text-left">Initial/Shock Dosing</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200">
+                        <tr>
+                            <td class="py-3 px-4 font-bold">Sewage Treatment (STP)</td>
+                            <td class="py-3 px-4">Debit/Flow</td>
+                            <td class="py-3 px-4">0.5 ppm / day</td>
+                            <td class="py-3 px-4">5 ppm (Days 1-5)</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 font-bold">Industrial Waste (WWTP)</td>
+                            <td class="py-3 px-4">100 m³/day</td>
+                            <td class="py-3 px-4">1 ppm / day</td>
+                            <td class="py-3 px-4">10 ppm (Day 1)</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 font-bold">Grease Trap</td>
+                            <td class="py-3 px-4">5 m³/day</td>
+                            <td class="py-3 px-4">5 ppm / day</td>
+                            <td class="py-3 px-4">50 ppm (Day 1)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-xs text-slate-500 mt-2 italic">* Exact dosage may vary based on pH (5-9) and dissolved oxygen levels. Consult our engineers.</p>
+        </div>
+
+        <!-- BEFORE / AFTER EVIDENCE -->
+        <div class="mt-20">
+            <h2 class="text-2xl font-bold text-center mb-10">Proven Results</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-4 shadow rounded border border-slate-100">
+                    <div class="flex gap-2 mb-4">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=400&q=80" class="w-1/2 h-40 object-cover grayscale rounded">
+                        <img src="https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?auto=format&fit=crop&w=400&q=80" class="w-1/2 h-40 object-cover rounded">
+                    </div>
+                    <h3 class="font-bold">McDonald's Grease Trap</h3>
+                    <p class="text-sm text-slate-600">Eliminated skimming needs. Sludge destroyed within 7 days.</p>
+                </div>
+                <div class="bg-white p-4 shadow rounded border border-slate-100">
+                    <div class="flex gap-2 mb-4">
+                        <img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&w=400&q=80" class="w-1/2 h-40 object-cover grayscale rounded">
+                        <img src="https://images.unsplash.com/photo-1574689049597-10bc4c4a4da2?auto=format&fit=crop&w=400&q=80" class="w-1/2 h-40 object-cover rounded">
+                    </div>
+                    <h3 class="font-bold">Teh Botol Sosro (WWTP)</h3>
+                    <p class="text-sm text-slate-600">Significant COD & BOD reduction. Water color changed from black to clear brown.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- DOWNLOAD SECTION -->
+    <div class="bg-green-50 py-16 border-t border-green-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <h3 class="text-2xl font-bold text-green-900 mb-8 text-center">Product Downloads</h3>
+            <div class="flex flex-col md:flex-row justify-center gap-6">
+                
+                <!-- Download Button 1 -->
+                <!-- REPLACE HREF WITH YOUR GOOGLE DRIVE LINK -->
+                <a href="YOUR_GOOGLE_DRIVE_LINK_HERE" target="_blank" class="flex items-center bg-white px-6 py-4 rounded-lg shadow-sm border border-green-200 hover:shadow-md transition group">
+                    <i class="fas fa-file-alt text-green-600 text-2xl mr-4"></i>
+                    <div class="text-left">
+                        <span class="block font-bold text-green-900">Download Product Brochure</span>
+                        <span class="block text-xs text-slate-500 group-hover:text-green-600">PDF format</span>
+                    </div>
+                </a>
+
+                <!-- Download Button 2 -->
+                <!-- REPLACE HREF WITH YOUR GOOGLE DRIVE LINK -->
+                <a href="YOUR_GOOGLE_DRIVE_LINK_HERE" target="_blank" class="flex items-center bg-white px-6 py-4 rounded-lg shadow-sm border border-green-200 hover:shadow-md transition group">
+                    <i class="fas fa-flask text-green-600 text-2xl mr-4"></i>
+                    <div class="text-left">
+                        <span class="block font-bold text-green-900">Download MSDS / Lab Report</span>
+                        <span class="block text-xs text-slate-500 group-hover:text-green-600">PDF format</span>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 py-8 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-sm">&copy; 2025 PT Toolmate Technologies Indonesia.</p>
+        </div>
+    </footer>
+</body>
+</html>

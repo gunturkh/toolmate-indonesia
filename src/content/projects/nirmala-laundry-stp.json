@@ -1,0 +1,21 @@
+{
+  "slug": "nirmala-laundry-stp",
+  "image": "/images/projects/nirmala-laundry-stp.jpg",
+  "badge": "WWTP",
+  "badgeColor": "bg-green-600",
+  "title": "PT. Nirmala Laundry",
+  "subtitle": "STP Project (MBR System)",
+  "description": "Membrane Bioreactor (MBR) sewage treatment system for industrial laundry facility.",
+  "fullDescription": "PT Toolmate Technologies Indonesia designed and installed a Membrane Bioreactor (MBR) based Sewage Treatment Plant for PT. Nirmala Laundry. The MBR system effectively treats wastewater from laundry operations, removing detergents, organic matter, and other pollutants to meet discharge standards.",
+  "scope": [
+    "MBR system design and engineering",
+    "Treatment tank fabrication and installation",
+    "Membrane filtration system setup",
+    "Piping and aeration systems",
+    "Commissioning and operator training"
+  ],
+  "client": "PT. Nirmala Laundry",
+  "location": "Batam, Indonesia",
+  "year": "2023",
+  "category": "wwtp"
+}

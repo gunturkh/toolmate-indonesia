@@ -1,0 +1,111 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import DownloadCard from '@components/DownloadCard.astro';
+import { downloads } from '@data/downloads';
+import { pageSEO } from '@data/seo';
+
+const serviceDetails = [
+  {
+    image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=800&q=80",
+    borderClass: "border-l-8 border-brand-gold",
+    iconBg: "bg-blue-100",
+    iconColor: "text-brand-navy",
+    icon: "fa-wind",
+    title: "HVAC & MVAC Systems",
+    description: "We provide full-spectrum Mechanical Ventilation and Air Conditioning solutions tailored for industrial factories and clean rooms.",
+    checkColor: "text-brand-gold",
+    items: ["Ducting & Fittings (Fabrication & Install)", "Chiller & Cooling Tower Setup/Servicing", "Exhaust Duct Systems", "Clean Room Systems (SUS/Iron)"],
+    reverse: false
+  },
+  {
+    image: "https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?auto=format&fit=crop&w=800&q=80",
+    borderClass: "border-r-8 border-green-500",
+    iconBg: "bg-green-100",
+    iconColor: "text-green-600",
+    icon: "fa-water",
+    title: "Environmental Engineering (WWTP)",
+    description: "Specialists in Waste Water Treatment Plant design, expansion, and maintenance using advanced biological technologies.",
+    checkColor: "text-green-500",
+    items: ["MBR (Membrane Bioreactor) Systems", "MBBR (Moving Bed Biofilm Reactor)", "Lamella Clarifiers", "STP & WTP Piping Installation"],
+    reverse: true
+  },
+  {
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80",
+    borderClass: "border-l-8 border-brand-navy",
+    iconBg: "bg-slate-100",
+    iconColor: "text-slate-700",
+    icon: "fa-tools",
+    title: "General Contractor & Fabrication",
+    description: "From civil works to specialized equipment fabrication, we ensure your facility infrastructure is built to last.",
+    checkColor: "text-brand-navy",
+    items: ["Epoxy Flooring (Industrial Grade)", "Steel Structure & Canopy Works", "Air Compressor & Dryer Setup", "Factory Renovation & M&E Installation"],
+    reverse: false
+  }
+];
+
+const serviceDownloads = [
+  downloads.companyProfile,
+  downloads.servicesBrochure
+];
+---
+
+<BaseLayout
+  title={pageSEO.services.title}
+  description={pageSEO.services.description}
+  keywords={pageSEO.services.keywords}
+  activePage="services"
+  flexLayout={true}
+>
+
+  <!-- HEADER -->
+  <div class="bg-brand-navy pt-32 pb-16 relative overflow-hidden">
+    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+    <div class="max-w-7xl mx-auto px-4 relative z-10">
+      <h1 class="text-4xl font-bold text-white mb-2">Engineering Capabilities</h1>
+      <p class="text-brand-gold font-semibold">M&E • HVAC • Civil Works • Fabrication</p>
+    </div>
+  </div>
+
+  <!-- SERVICES CONTENT -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+    {serviceDetails.map((service) => (
+      <div class={`flex flex-col ${service.reverse ? 'md:flex-row-reverse' : 'md:flex-row'} gap-12 items-center`}>
+        <div class="md:w-1/2">
+          <img src={service.image} class={`rounded-lg shadow-xl ${service.borderClass}`} alt={service.title}>
+        </div>
+        <div class="md:w-1/2">
+          <div class={`w-12 h-12 ${service.iconBg} ${service.iconColor} rounded-lg flex items-center justify-center text-xl mb-4`}>
+            <i class={`fas ${service.icon}`}></i>
+          </div>
+          <h2 class="text-3xl font-bold text-brand-navy mb-4">{service.title}</h2>
+          <p class="text-slate-600 mb-4">{service.description}</p>
+          <ul class="space-y-2 text-sm text-slate-700">
+            {service.items.map((item) => (
+              <li><i class={`fas fa-check ${service.checkColor} mr-2`}></i> {item}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <!-- DOWNLOAD SECTION -->
+  <div class="bg-slate-50 py-16 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4">
+      <h3 class="text-2xl font-bold text-brand-navy mb-8 text-center">Downloads & Resources</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        {serviceDownloads.map((download) => (
+          <DownloadCard
+            icon={download.icon}
+            iconColor={download.iconColor}
+            title={download.title}
+            subtitle={download.subtitle}
+            link={download.url}
+            buttonBg="bg-brand-navy"
+          />
+        ))}
+      </div>
+    </div>
+  </div>
+
+</BaseLayout>

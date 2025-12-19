@@ -1,0 +1,21 @@
+{
+  "slug": "satnusa-persada",
+  "image": "/images/projects/satnusa-persada.jpg",
+  "badge": "WWTP",
+  "badgeColor": "bg-green-600",
+  "title": "PT. Satnusa Persada Tbk",
+  "subtitle": "Kapasitas Process Project",
+  "description": "Comprehensive wastewater treatment capacity project including tank systems and electrical installations.",
+  "fullDescription": "PT Toolmate Technologies Indonesia executed a major capacity process project for PT. Satnusa Persada Tbk at Pelita-Batam. The project encompassed installation of large-scale water tanks, treatment systems, electrical control panels, and associated civil works to enhance the facility's wastewater processing capabilities.",
+  "scope": [
+    "Large water tank installation (100,000 Ltr capacity)",
+    "Treatment system installation",
+    "Electrical panel and wiring works",
+    "Civil construction and structural works",
+    "System integration and commissioning"
+  ],
+  "client": "PT. Satnusa Persada Tbk",
+  "location": "Pelita, Batam, Indonesia",
+  "year": "2023",
+  "category": "wwtp"
+}

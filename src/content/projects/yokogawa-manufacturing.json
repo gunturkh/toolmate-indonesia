@@ -1,0 +1,21 @@
+{
+  "slug": "yokogawa-manufacturing",
+  "image": "/images/projects/yokogawa-hvac.jpg",
+  "badge": "HVAC",
+  "badgeColor": "bg-blue-600",
+  "title": "PT. Yokogawa Manufacturing Batam",
+  "subtitle": "HVAC & Structure Works",
+  "description": "Complete HVAC system installation including cooling towers and structural canopy works.",
+  "fullDescription": "PT Toolmate Technologies Indonesia executed comprehensive HVAC and structural works for PT. Yokogawa Manufacturing Batam. The project included installation of industrial cooling tower systems, chilled water piping, and protective canopy structures for outdoor equipment.",
+  "scope": [
+    "Cooling tower installation and setup",
+    "Chilled water piping system",
+    "Pump and valve installation",
+    "Structural canopy construction",
+    "System commissioning and balancing"
+  ],
+  "client": "PT. Yokogawa Manufacturing Batam",
+  "location": "Batam, Indonesia",
+  "year": "2022",
+  "category": "hvac"
+}

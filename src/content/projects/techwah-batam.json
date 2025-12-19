@@ -1,0 +1,22 @@
+{
+  "slug": "techwah-batam",
+  "image": "/images/projects/techwah-chimney.jpg",
+  "badge": "Structure",
+  "badgeColor": "bg-brand-navy",
+  "title": "PT. Techwah Batam",
+  "subtitle": "Boiler Chimney Work",
+  "description": "Fabrication and installation of industrial boiler chimney system with stainless steel construction using heavy cranes.",
+  "fullDescription": "A critical infrastructure project involving the fabrication and installation of an industrial boiler chimney at PT. Techwah Batam. The project featured tall stainless steel chimney construction with precision engineering, heavy crane operations for safe installation, and structural supports including access ladders and platforms.",
+  "scope": [
+    "Structural engineering and design",
+    "Stainless steel chimney fabrication",
+    "Foundation and base plate installation",
+    "Heavy crane lifting and assembly",
+    "Access ladder and platform installation",
+    "Safety inspection and certification"
+  ],
+  "client": "PT. Techwah Batam",
+  "location": "Batam, Indonesia",
+  "year": "2021",
+  "category": "structure"
+}

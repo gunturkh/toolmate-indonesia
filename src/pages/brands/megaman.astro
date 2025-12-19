@@ -1,0 +1,224 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+
+const megamanBase = 'https://www.megaman-ap.com';
+
+const portfolioImages = [
+  { image: `${megamanBase}/Upload/image/202412/20241224141158_2577.jpeg`, category: 'Commercial' },
+  { image: `${megamanBase}/Upload/image/202412/20241224141158_1796.jpeg`, category: 'Commercial' },
+  { image: `${megamanBase}/Upload/image/202412/20241224125805_6015.jpeg`, category: 'Hospitality' },
+  { image: `${megamanBase}/Upload/image/202412/20241224125805_5390.jpeg`, category: 'Hospitality' },
+  { image: `${megamanBase}/Upload/image/202412/20241224125905_8046.jpeg`, category: 'Retail' },
+  { image: `${megamanBase}/Upload/image/202412/20241224125905_7265.jpeg`, category: 'Retail' },
+];
+
+const productCategories = [
+  {
+    name: 'LED Bulbs',
+    products: [
+      { name: 'Candle Bulb', spec: '3W - 7W | E14/E27', image: `${megamanBase}/Upload/image/202109/20210909152229_6116.png` },
+      { name: 'A Bulb', spec: '3W - 25W | E27', image: `${megamanBase}/Upload/image/202505/20250516151238_2775.png` },
+      { name: 'T Bulb', spec: '20W - 60W | E27', image: `${megamanBase}/Upload/image/202109/20210909145949_4397.png` },
+      { name: 'P Bulb', spec: '5W - 15W | E27', image: `${megamanBase}/Upload/image/202505/20250516151325_8713.png` },
+      { name: 'Filament', spec: '4W - 6W | E14/E27', image: `${megamanBase}/Upload/image/202109/20210909173337_0334.png` },
+      { name: 'Globe', spec: '8W - 12W | E27', image: `${megamanBase}/Upload/image/202109/20210909140218_7834.png` },
+    ]
+  },
+  {
+    name: 'Reflector Lamps',
+    products: [
+      { name: 'MR16', spec: '5W - 7W | GU5.3', image: `${megamanBase}/Upload/image/202505/20250516151359_3556.png` },
+      { name: 'PAR30', spec: '10W - 15W | E27', image: `${megamanBase}/Upload/image/202109/20210909173257_9240.png` },
+      { name: 'PAR38', spec: '15W - 20W | E27', image: `${megamanBase}/Upload/image/202109/20210909173247_5022.png` },
+    ]
+  },
+  {
+    name: 'High Power',
+    products: [
+      { name: 'T-Bulb HP', spec: '20W - 100W | E27/E40', image: `${megamanBase}/Upload/image/202505/20250516151436_3713.png` },
+      { name: 'UFO', spec: '30W - 80W | E27/E40', image: `${megamanBase}/Upload/image/202109/20210910084025_5490.png` },
+      { name: 'Bowling', spec: '40W - 100W | E40', image: `${megamanBase}/Upload/image/202109/20210910084106_1583.png` },
+    ]
+  },
+  {
+    name: 'Downlights',
+    products: [
+      { name: 'Slim Downlight', spec: '5W - 18W | Ø75-150mm', image: `${megamanBase}/Upload/image/202507/20250723170532_7363.png` },
+      { name: 'Pro Downlight', spec: '8W - 30W | Ø75-200mm', image: `${megamanBase}/Upload/image/202505/20250519150927_6056.png` },
+      { name: 'Anti-glare', spec: '7W - 18W | UGR<19', image: `${megamanBase}/Upload/20241209/1.jpg` },
+    ]
+  },
+  {
+    name: 'Panels & Battens',
+    products: [
+      { name: 'LED Panel', spec: '18W - 72W | 600x600mm', image: `${megamanBase}/Upload/image/202109/20210909153221_1430.png` },
+      { name: 'Grille Panel', spec: '24W - 48W | Low Glare', image: `${megamanBase}/Upload/20241209/3.jpg` },
+      { name: 'T5 Batten', spec: '4W - 20W | Linkable', image: `${megamanBase}/Upload/image/202507/20250723170557_3563.png` },
+      { name: 'IP65 Batten', spec: '18W - 70W | Damp Proof', image: `${megamanBase}/Upload/image/202507/20250707134327_0251.png` },
+    ]
+  },
+  {
+    name: 'Track Lights',
+    products: [
+      { name: 'Track Spot', spec: '10W - 40W | 3-Phase', image: `${megamanBase}/Upload/image/202109/20210909153309_5179.png` },
+    ]
+  },
+  {
+    name: 'Decorative',
+    products: [
+      { name: 'Pendant', spec: '12W - 48W | Dimmable', image: `${megamanBase}/Upload/image/202109/20210909153240_3304.png` },
+      { name: 'Ceiling Light', spec: '12W - 72W | CRI 97', image: `${megamanBase}/Upload/image/202109/20210909152921_8943.png` },
+    ]
+  },
+  {
+    name: 'Outdoor',
+    products: [
+      { name: 'Floodlight', spec: '10W - 1200W | IP65', image: `${megamanBase}/Upload/image/202507/20250723170653_9025.png` },
+      { name: 'Solar Flood', spec: '30W - 200W | LiFePO4', image: `${megamanBase}/Upload/20241209/2.jpg` },
+      { name: 'Highbay', spec: '100W - 240W | Industrial', image: `${megamanBase}/Upload/image/202507/20250723170715_4316.png` },
+      { name: 'Street Light', spec: '30W - 200W | IP66', image: `${megamanBase}/Upload/image/202507/20250723170638_3960.png` },
+      { name: 'Wall Lamp', spec: '6W - 18W | IP65', image: `${megamanBase}/Upload/image/202109/20210909154738_2055.png` },
+    ]
+  },
+];
+---
+
+<BaseLayout
+  title="Megaman LED Lighting - German Quality"
+  description="Megaman LED lighting products - German brand since 1994. Premium LED bulbs, downlights, panels, floodlights and more. Official distributor in Batam, Indonesia."
+  keywords={['Megaman LED', 'Megaman Indonesia', 'German LED brand', 'LED bulbs Batam', 'Megaman downlight', 'LED panel', 'industrial lighting']}
+  activePage="brands"
+  flexLayout={true}
+>
+  <!-- Header -->
+  <div class="bg-white pt-28 pb-12 border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div class="flex items-center gap-6">
+          <img src="/images/logo/megaman.jpeg" alt="Megaman" class="h-16 md:h-20 object-contain" />
+          <div>
+            <p class="text-sm text-slate-500 mb-1">German LED Brand since 1994</p>
+            <h1 class="text-2xl md:text-3xl font-bold text-slate-800">Megaman</h1>
+          </div>
+        </div>
+        <div class="flex flex-wrap items-center gap-3">
+          {['CE', 'CB', 'SNI', 'ISO'].map((cert) => (
+            <span class="px-2 py-1 text-xs font-medium text-slate-600 bg-slate-100 rounded">{cert}</span>
+          ))}
+          <a
+            href="https://drive.google.com/file/d/1xo9IqeCwELVNj7oqsFQAkRei7M9CkcCd/view"
+            target="_blank"
+            rel="noopener"
+            class="px-3 py-1.5 text-xs font-medium text-blue-700 bg-blue-50 border border-blue-200 rounded hover:bg-blue-100 transition"
+          >
+            Download Catalogue
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Stats -->
+  <div class="bg-slate-50 py-6 border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-wrap justify-center md:justify-start gap-8 text-center md:text-left">
+        <div>
+          <p class="text-2xl font-bold text-slate-800">31+</p>
+          <p class="text-sm text-slate-500">Years Experience</p>
+        </div>
+        <div class="hidden md:block w-px bg-slate-300"></div>
+        <div>
+          <p class="text-2xl font-bold text-slate-800">52+</p>
+          <p class="text-sm text-slate-500">Countries</p>
+        </div>
+        <div class="hidden md:block w-px bg-slate-300"></div>
+        <div>
+          <p class="text-2xl font-bold text-slate-800">140</p>
+          <p class="text-sm text-slate-500">lm/W Efficiency</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Products -->
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+    {productCategories.map((category) => (
+      <div class="mb-12">
+        <h2 class="text-lg font-semibold text-slate-700 mb-4 pb-2 border-b border-slate-200">
+          {category.name}
+        </h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+          {category.products.map((product) => (
+            <div class="group">
+              <div class="aspect-square bg-white border border-slate-200 rounded-lg p-3 mb-2 flex items-center justify-center group-hover:border-slate-300 transition">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  class="max-h-full max-w-full object-contain"
+                  loading="lazy"
+                />
+              </div>
+              <p class="text-sm font-medium text-slate-800">{product.name}</p>
+              <p class="text-xs text-slate-500">{product.spec}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <!-- Portfolio -->
+  <div class="bg-slate-50 border-y border-slate-200 py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <h2 class="text-lg font-semibold text-slate-700 mb-6">Project Portfolio</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        {portfolioImages.map((item) => (
+          <div class="group relative overflow-hidden rounded-lg aspect-[4/3]">
+            <img
+              src={item.image}
+              alt={`${item.category} lighting project`}
+              class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition">
+              <span class="absolute bottom-3 left-3 text-white text-sm font-medium">{item.category}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+      <p class="text-sm text-slate-500 mt-4">Megaman lighting solutions installed in commercial, hospitality, and retail spaces worldwide.</p>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div class="bg-slate-800 py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div>
+          <h2 class="text-xl font-semibold text-white mb-2">Need pricing or specifications?</h2>
+          <p class="text-slate-400">Contact us for quotes, bulk orders, or technical support.</p>
+        </div>
+        <div class="flex gap-3">
+          <a href="/#contact" class="px-5 py-2.5 bg-white text-slate-800 font-medium rounded hover:bg-slate-100 transition">
+            Request Quote
+          </a>
+          <a href="https://www.megaman-ap.com" target="_blank" rel="noopener" class="px-5 py-2.5 border border-slate-600 text-slate-300 font-medium rounded hover:border-slate-500 hover:text-white transition">
+            Official Site
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <div class="bg-white py-6 border-t border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex justify-between items-center">
+      <a href="/brands" class="text-sm text-slate-600 hover:text-slate-800 transition">
+        ← All Brands
+      </a>
+      <a href="/brands/histar" class="text-sm text-slate-600 hover:text-slate-800 transition">
+        HiSTAR →
+      </a>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,21 @@
+{
+  "slug": "menara-aria-harbourbay",
+  "image": "/images/projects/menara-aria-stp.jpg",
+  "badge": "WWTP",
+  "badgeColor": "bg-green-600",
+  "title": "Menara Aria Harbourbay Downtown",
+  "subtitle": "STP Project",
+  "description": "Sewage Treatment Plant project for high-rise residential building in Harbourbay Downtown.",
+  "fullDescription": "PT Toolmate Technologies Indonesia completed a comprehensive Sewage Treatment Plant (STP) project for Menara Aria at Harbourbay Downtown. The project involved installation of treatment systems including control panels, pumps, and processing equipment for efficient wastewater management in this premium residential tower.",
+  "scope": [
+    "STP system design and engineering",
+    "Control panel installation with VISALUX systems",
+    "Pump and motor installation",
+    "Piping and civil works",
+    "System commissioning and testing"
+  ],
+  "client": "Menara Aria Harbourbay Downtown",
+  "location": "Batam, Indonesia",
+  "year": "2023",
+  "category": "wwtp"
+}

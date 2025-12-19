@@ -1,0 +1,34 @@
+---
+interface Props {
+  icon?: string;
+  iconColor?: string;
+  title: string;
+  titleColor?: string;
+  subtitle: string;
+  link?: string;
+  buttonBg?: string;
+  borderColor?: string;
+}
+
+const {
+  icon = "fa-file-pdf",
+  iconColor = "text-red-500",
+  title,
+  titleColor = "text-brand-navy",
+  subtitle,
+  link = "YOUR_GOOGLE_DRIVE_LINK_HERE",
+  buttonBg = "bg-brand-navy",
+  borderColor = "border-slate-200"
+} = Astro.props;
+---
+
+<div class={`bg-white p-6 rounded-lg shadow-sm border ${borderColor} flex items-center gap-4 hover:shadow-md transition`}>
+  <div class={`${iconColor} text-4xl`}><i class={`fas ${icon}`}></i></div>
+  <div class="flex-1">
+    <h4 class={`font-bold ${titleColor}`}>{title}</h4>
+    <p class="text-xs text-slate-500">{subtitle}</p>
+  </div>
+  <a href={link} target="_blank" class={`${buttonBg} text-white text-sm px-4 py-2 rounded hover:opacity-90 transition`}>
+    Download
+  </a>
+</div>

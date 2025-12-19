@@ -1,0 +1,229 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { downloads } from '@data/downloads';
+import { pageSEO } from '@data/seo';
+
+const benefits = [
+  "Reduces BOD, COD, TSS and Sludge volume",
+  "Instantly eliminates bad odor (Ammonia/H2S)",
+  "Digests wastes and sludge which gives bad odor due to fermentation",
+  "Inhibits the growth of algae to improve water quality",
+  "Controls pathogenic bacteria (Clostridium, Vibro cholera, Staphylococcus, E-coli, Salmonella)",
+  "Reduces energy cost and increases efficiency of sewage treatment",
+  "100% natural ingredients - environmentally friendly and easy to use",
+  "Can work at pH 5-9 and temperatures 0°C - 60°C"
+];
+
+const dosageData = [
+  { app: "Sewage Treatment (STP)", system: "100 m³/day", standard: "0.5 ppm / day", initial: "5 ppm (Day 1-4), then 2 ppm (Day 2-4)" },
+  { app: "Industrial Waste (WWTP)", system: "100 m³/day", standard: "1 ppm / day", initial: "10 ppm (Day 1), 5 ppm (Day 2-4)" },
+  { app: "Grease Trap / Oil Separator", system: "5 m³/day", standard: "5 ppm / day", initial: "50 ppm (Day 1), 20 ppm (Day 2-4)" },
+  { app: "Septic Tank / Sump Pit", system: "10 m³ tank", standard: "0.5 ppm / week", initial: "5 ppm weekly" },
+  { app: "Large Scale WWTP", system: "500 m³/day", standard: "2 ppm / day", initial: "15 ppm (Day 1), 10 ppm (Day 2-4)" }
+];
+
+const provenResults = [
+  {
+    beforeImg: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=400&q=80",
+    afterImg: "https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?auto=format&fit=crop&w=400&q=80",
+    title: "McDonald's Grease Trap (Restaurant Industry)",
+    description: "Application on 4 grease trap tanks with 8m³ total capacity. No skimming during trial. Reduced oil/grease and destroyed clumped sludge within 5 days treatment (50 gram/day dosage)."
+  },
+  {
+    beforeImg: "https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&w=400&q=80",
+    afterImg: "https://images.unsplash.com/photo-1574689049597-10bc4c4a4da2?auto=format&fit=crop&w=400&q=80",
+    title: "Teh Botol Sosro (Tea Factory WWTP)",
+    description: "Significant COD, BOD, TSS and sludge volume reduction. Water color changed from black to brownish within 16 days of treatment."
+  },
+  {
+    beforeImg: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=400&q=80",
+    afterImg: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=400&q=80",
+    title: "Mayora (Food Factory WWTP)",
+    description: "50% sludge reduction before and after treatment. Odor almost eliminated. Water changed from black to brownish. Chemical usage (coagulant & flocculant) reduced by up to 30%."
+  }
+];
+
+const applications = [
+  "Palm Oil Mill Effluent Pond (POME)",
+  "Rubber Mill Waste Water",
+  "Industrial Waste Water",
+  "Lake Pond & Water Reservoir",
+  "Sewage Treatment Plant",
+  "Grease Trap & Clarifier",
+  "Leachate Pond",
+  "River & Canal",
+  "Domestic Waste",
+  "Hospital Waste",
+  "Hotel and Restaurant Waste",
+  "Farm & Animal Husbandry",
+  "Trash cans and toilets"
+];
+---
+
+<BaseLayout
+  title={pageSEO.products.title}
+  description={pageSEO.products.description}
+  keywords={pageSEO.products.keywords}
+  type={pageSEO.products.type}
+  activePage="products"
+  flexLayout={true}
+>
+
+  <!-- HERO -->
+  <div class="bg-green-900 pt-32 pb-20 text-center relative overflow-hidden">
+    <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/leaf.png')]"></div>
+    <div class="relative z-10">
+      <span class="inline-block py-1 px-3 rounded-full bg-green-700 text-green-100 text-xs font-bold uppercase mb-4">Naturelabs Biotech</span>
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Biology Genesis</h1>
+      <p class="text-green-100 max-w-2xl mx-auto">Natural Bio Technology Solution for Industrial Waste Water Treatment.</p>
+    </div>
+  </div>
+
+  <!-- PRODUCT INFO -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <div>
+        <h2 class="text-3xl font-bold text-brand-biocon mb-6">What is Biology Genesis?</h2>
+        <p class="text-slate-600 mb-6 leading-relaxed">
+          Biology Genesis is a group of human-friendly and beneficial bacteria & yeast. It is a natural culture without harsh chemical mixtures. It is certified safe, non-toxic, and free of pathogenic bacteria.
+        </p>
+        <h3 class="font-bold text-lg mb-3">Major Benefits:</h3>
+        <ul class="space-y-3 mb-8">
+          {benefits.map((benefit) => (
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-brand-bio mt-1 mr-3"></i> {benefit}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <img src="https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?auto=format&fit=crop&w=800&q=80" class="rounded-lg shadow-xl mb-6" alt="Biology Genesis">
+        <div class="bg-green-50 p-4 rounded-lg border border-green-100 mb-6">
+          <h4 class="font-bold text-green-800 mb-3">Wide Range of Application:</h4>
+          <div class="grid grid-cols-2 gap-2 text-sm text-green-700">
+            {applications.map((app) => (
+              <div class="flex items-start">
+                <i class="fas fa-leaf text-green-500 mr-2 mt-1 text-xs"></i>
+                <span>{app}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div class="bg-blue-50 p-4 rounded-lg border border-blue-100">
+          <h4 class="font-bold text-blue-800 mb-2">Certifications:</h4>
+          <p class="text-sm text-blue-700">Tested by Food Research Center Foundation of Japan - certified non-toxic and not harmful to humans and animals. Also certified by Health Science Office of Ministry of Health of Thailand as free of pathogenic bacteria. Registered with BPOM (Indonesian Food and Drug Administration).</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- DOSAGE TABLE -->
+    <div class="mt-20">
+      <h2 class="text-2xl font-bold text-center mb-8">Application Guide & Dosage</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full bg-white border border-slate-200 text-sm">
+          <thead class="bg-brand-navy text-white">
+            <tr>
+              <th class="py-3 px-4 text-left">Application</th>
+              <th class="py-3 px-4 text-left">System</th>
+              <th class="py-3 px-4 text-left">Standard Dosage (Maintenance)</th>
+              <th class="py-3 px-4 text-left">Initial/Shock Dosing</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            {dosageData.map((row) => (
+              <tr>
+                <td class="py-3 px-4 font-bold">{row.app}</td>
+                <td class="py-3 px-4">{row.system}</td>
+                <td class="py-3 px-4">{row.standard}</td>
+                <td class="py-3 px-4">{row.initial}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-slate-500 mt-2 italic">* Exact dosage may vary based on pH (5-9) and dissolved oxygen levels. Consult our engineers.</p>
+    </div>
+
+    <!-- PROVEN RESULTS -->
+    <div class="mt-20">
+      <h2 class="text-2xl font-bold text-center mb-10">Proven Results - Application Reports</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {provenResults.map((result) => (
+          <div class="bg-white p-4 shadow rounded border border-slate-100">
+            <div class="flex gap-2 mb-4">
+              <div class="w-1/2">
+                <p class="text-xs text-slate-500 mb-1 text-center">Before</p>
+                <img src={result.beforeImg} class="w-full h-32 object-cover grayscale rounded" alt="Before">
+              </div>
+              <div class="w-1/2">
+                <p class="text-xs text-slate-500 mb-1 text-center">After</p>
+                <img src={result.afterImg} class="w-full h-32 object-cover rounded" alt="After">
+              </div>
+            </div>
+            <h3 class="font-bold text-green-800">{result.title}</h3>
+            <p class="text-sm text-slate-600">{result.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- NATURELABS BIOTECH -->
+    <div class="mt-20 bg-slate-50 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-12">
+      <div class="max-w-4xl mx-auto text-center">
+        <span class="inline-block py-1 px-3 rounded-full bg-green-100 text-green-800 text-xs font-bold uppercase mb-4">Also Available</span>
+        <h2 class="text-2xl font-bold text-brand-navy mb-4">Naturelabs Biotech</h2>
+        <p class="text-slate-600 mb-6">
+          Naturelabs Biotech contains various types of bacteria and enzymes which are able to break down various types of industrial wastewater effectively and efficiently. Can be used as a starter for decomposing microbes or in combination with native microbes in waste ponds.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="font-bold text-green-800 mb-3">Major Effects</h3>
+            <ul class="space-y-2 text-sm text-slate-600">
+              <li><i class="fas fa-check text-green-500 mr-2"></i>Reduces unpleasant odors</li>
+              <li><i class="fas fa-check text-green-500 mr-2"></i>Reducing BOD, COD, TSS and other organic parameters</li>
+              <li><i class="fas fa-check text-green-500 mr-2"></i>Effective in pool maintenance process</li>
+              <li><i class="fas fa-check text-green-500 mr-2"></i>Reduces operational costs in WWTP</li>
+              <li><i class="fas fa-check text-green-500 mr-2"></i>High growth rate (2-72 hours)</li>
+              <li><i class="fas fa-check text-green-500 mr-2"></i>Suppresses pathogenic microorganisms</li>
+            </ul>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="font-bold text-green-800 mb-3">Working Parameters</h3>
+            <ul class="space-y-2 text-sm text-slate-600">
+              <li><i class="fas fa-cog text-green-500 mr-2"></i>pH range: 5-9</li>
+              <li><i class="fas fa-thermometer-half text-green-500 mr-2"></i>Temperature: 0°C - 60°C</li>
+              <li><i class="fas fa-tint text-green-500 mr-2"></i>Dissolved oxygen: up to 0.5 ppm</li>
+              <li><i class="fas fa-water text-green-500 mr-2"></i>Salinity: up to 5% (brackish)</li>
+              <li><i class="fas fa-leaf text-green-500 mr-2"></i>Works in aerobic and anaerobic conditions</li>
+              <li><i class="fas fa-utensils text-green-500 mr-2"></i>Effective for carbohydrates, fiber, fat, oil, protein</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DOWNLOAD SECTION -->
+  <div class="bg-green-50 py-16 border-t border-green-100">
+    <div class="max-w-7xl mx-auto px-4">
+      <h3 class="text-2xl font-bold text-green-900 mb-8 text-center">Product Downloads</h3>
+      <div class="flex flex-col md:flex-row justify-center gap-6">
+        <a href={downloads.productBrochure.url} target="_blank" class="flex items-center bg-white px-6 py-4 rounded-lg shadow-sm border border-green-200 hover:shadow-md transition group">
+          <i class={`fas ${downloads.productBrochure.icon} text-green-600 text-2xl mr-4`}></i>
+          <div class="text-left">
+            <span class="block font-bold text-green-900">{downloads.productBrochure.title}</span>
+            <span class="block text-xs text-slate-500 group-hover:text-green-600">{downloads.productBrochure.subtitle}</span>
+          </div>
+        </a>
+        <a href={downloads.msdsLabReport.url} target="_blank" class="flex items-center bg-white px-6 py-4 rounded-lg shadow-sm border border-green-200 hover:shadow-md transition group">
+          <i class={`fas ${downloads.msdsLabReport.icon} text-green-600 text-2xl mr-4`}></i>
+          <div class="text-left">
+            <span class="block font-bold text-green-900">{downloads.msdsLabReport.title}</span>
+            <span class="block text-xs text-slate-500 group-hover:text-green-600">{downloads.msdsLabReport.subtitle}</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</BaseLayout>

@@ -1,0 +1,62 @@
+---
+interface Props {
+  showSocial?: boolean;
+  flexGrow?: boolean;
+}
+
+const { showSocial = false, flexGrow = false } = Astro.props;
+---
+
+<footer class:list={["bg-slate-900 border-t border-slate-800 text-slate-400 py-12", { "mt-auto": flexGrow }]}>
+  <div class="max-w-7xl mx-auto px-4">
+    <!-- Company Addresses -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+      <!-- Head Office - Batam -->
+      <div class="text-center md:text-left">
+        <h4 class="text-white font-bold mb-3">PT. Toolmate Technologies Indonesia</h4>
+        <p class="text-sm leading-relaxed">
+          Jl. Nagoya Hill Blok R3 No 6-7<br>
+          Lubuk Baja Kota, Kec. Lubuk Baja<br>
+          Kota Batam, Kepulauan Riau 29444
+        </p>
+      </div>
+      <!-- Branch Office - Jakarta -->
+      <div class="text-center md:text-left">
+        <h4 class="text-white font-bold mb-3">PT. Toolmate Enviro Indonesia</h4>
+        <p class="text-sm leading-relaxed">
+          Ruko Mutiara Taman Palem<br>
+          Blok C 10 No. 82 Cengkareng<br>
+          Jakarta Barat, Indonesia
+        </p>
+      </div>
+      <!-- Contact Info -->
+      <div class="text-center md:text-left">
+        <h4 class="text-white font-bold mb-3">Contact</h4>
+        <p class="text-sm leading-relaxed">
+          <i class="fas fa-phone mr-2 text-brand-gold"></i>+62 811-1112-8383 (Louis Loi)<br>
+          <i class="fas fa-envelope mr-2 text-brand-gold"></i>toolmate.pttti@gmail.com
+        </p>
+      </div>
+      <!-- Services -->
+      <div class="text-center md:text-left">
+        <h4 class="text-white font-bold mb-3">Our Services</h4>
+        <p class="text-sm leading-relaxed">
+          HVAC & MVAC Systems<br>
+          Waste Water Treatment (WWTP)<br>
+          General Contractor & Fabrication
+        </p>
+      </div>
+    </div>
+
+    <!-- Copyright & Social -->
+    <div class="border-t border-slate-800 pt-6 text-center sm:flex sm:justify-between sm:items-center">
+      <p class="text-sm">&copy; 2025 PT Toolmate Technologies Indonesia. All rights reserved.</p>
+      {showSocial && (
+        <div class="flex justify-center space-x-6 mt-4 sm:mt-0">
+          <a href="#" class="hover:text-white transition"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="hover:text-white transition"><i class="fab fa-instagram"></i></a>
+        </div>
+      )}
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,122 @@
+---
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import WhatsAppFloat from '@components/WhatsAppFloat.astro';
+import {
+  siteConfig,
+  defaultSEO,
+  organizationSchema,
+  localBusinessSchema,
+  type SEOData,
+} from '@data/seo';
+
+interface Props {
+  title: string;
+  description?: string;
+  keywords?: string[];
+  image?: string;
+  type?: 'website' | 'article' | 'product';
+  noindex?: boolean;
+  activePage?: 'home' | 'services' | 'products' | 'projects' | 'brands';
+  showWhatsApp?: boolean;
+  showSocial?: boolean;
+  flexLayout?: boolean;
+  canonicalUrl?: string;
+}
+
+const {
+  title,
+  description = defaultSEO.description,
+  keywords = defaultSEO.keywords,
+  image = siteConfig.defaultImage,
+  type = 'website',
+  noindex = false,
+  activePage = 'home',
+  showWhatsApp = false,
+  showSocial = false,
+  flexLayout = false,
+  canonicalUrl,
+} = Astro.props;
+
+const fullTitle = `${title} | ${siteConfig.name}`;
+const fullImageUrl = image.startsWith('http') ? image : `${siteConfig.url}${image}`;
+const currentUrl = canonicalUrl || `${siteConfig.url}${Astro.url.pathname}`;
+---
+
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary Meta Tags -->
+  <title>{fullTitle}</title>
+  <meta name="title" content={fullTitle}>
+  <meta name="description" content={description}>
+  {keywords && keywords.length > 0 && (
+    <meta name="keywords" content={keywords.join(', ')}>
+  )}
+  <meta name="author" content={siteConfig.name}>
+  <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'}>
+  <link rel="canonical" href={currentUrl}>
+
+  <!-- Language & Region -->
+  <meta name="geo.region" content="ID-KR">
+  <meta name="geo.placename" content="Batam">
+  <meta name="language" content="Indonesian">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content={type}>
+  <meta property="og:url" content={currentUrl}>
+  <meta property="og:title" content={fullTitle}>
+  <meta property="og:description" content={description}>
+  <meta property="og:image" content={fullImageUrl}>
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content={siteConfig.locale}>
+  <meta property="og:site_name" content={siteConfig.name}>
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content={currentUrl}>
+  <meta property="twitter:title" content={fullTitle}>
+  <meta property="twitter:description" content={description}>
+  <meta property="twitter:image" content={fullImageUrl}>
+
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#1e3a5f">
+  <meta name="msapplication-TileColor" content="#1e3a5f">
+
+  <!-- Favicon (add your favicon files to public folder) -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+</head>
+<body class:list={["font-sans text-slate-700 bg-white antialiased", { "flex flex-col min-h-screen": flexLayout }]}>
+  <Navbar activePage={activePage} />
+
+  <slot />
+
+  <Footer showSocial={showSocial} flexGrow={flexLayout} />
+
+  {showWhatsApp && <WhatsAppFloat />}
+
+  <script>
+    // Mobile menu toggle
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn?.addEventListener('click', () => menu?.classList.toggle('hidden'));
+  </script>
+</body>
+</html>

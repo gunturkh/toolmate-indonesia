@@ -1,0 +1,166 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+
+const productCategories = [
+  {
+    name: 'LED Bulbs',
+    products: [
+      { name: 'A-Shape', spec: '5W - 20W | E27' },
+      { name: 'T-Shape', spec: '15W - 50W | E27' },
+      { name: 'Capsule', spec: '7W - 15W | E27' },
+    ]
+  },
+  {
+    name: 'Downlights',
+    products: [
+      { name: 'Slim Panel', spec: '6W - 24W | Tri-Color' },
+      { name: 'Anti-Glare', spec: '7W - 18W | UGR<19' },
+      { name: 'Surface Mount', spec: '7W - 24W' },
+    ]
+  },
+  {
+    name: 'Spotlights & Track',
+    products: [
+      { name: 'COB Spotlight', spec: '7W - 30W | CRI>90' },
+      { name: 'Track Light', spec: '10W - 40W | 2/3-Wire' },
+      { name: 'Magnetic Track', spec: '6W - 20W | 48V DC' },
+    ]
+  },
+  {
+    name: 'Panels & Battens',
+    products: [
+      { name: 'LED Panel', spec: '18W - 72W | 600x600' },
+      { name: 'Backlit Panel', spec: '40W - 60W | 100+ lm/W' },
+      { name: 'LED Batten', spec: '18W - 45W | Linkable' },
+    ]
+  },
+  {
+    name: 'Outdoor & Industrial',
+    products: [
+      { name: 'Floodlight', spec: '10W - 200W | IP65' },
+      { name: 'Highbay', spec: '100W - 200W | UFO/Linear' },
+      { name: 'Street Light', spec: '30W - 150W | IP66' },
+      { name: 'Tri-Proof', spec: '20W - 60W | IP65' },
+    ]
+  },
+  {
+    name: 'Strip & Accessories',
+    products: [
+      { name: 'Flex Strip', spec: '4.8W - 19.2W/m | 12/24V' },
+      { name: 'Neon Flex', spec: '8W - 12W/m | Bendable' },
+      { name: 'LED Driver', spec: '20W - 350W | IP20/IP67' },
+    ]
+  },
+];
+---
+
+<BaseLayout
+  title="Prisled LED Lighting"
+  description="Prisled LED lighting products for commercial and industrial applications. LED bulbs, downlights, panels, floodlights and more. Official distributor in Batam."
+  keywords={['Prisled LED', 'LED lighting Batam', 'commercial LED', 'industrial lighting', 'LED downlight', 'LED panel', 'LED floodlight']}
+  activePage="brands"
+  flexLayout={true}
+>
+  <!-- Header -->
+  <div class="bg-white pt-28 pb-12 border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div class="flex items-center gap-6">
+          <img src="/images/logo/prisled.png" alt="Prisled" class="h-16 md:h-20 object-contain" />
+          <div>
+            <p class="text-sm text-slate-500 mb-1">Commercial & Industrial LED</p>
+            <h1 class="text-2xl md:text-3xl font-bold text-slate-800">Prisled</h1>
+          </div>
+        </div>
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="px-2 py-1 text-xs font-medium text-slate-600 bg-slate-100 rounded">Energy Saving</span>
+          <span class="px-2 py-1 text-xs font-medium text-slate-600 bg-slate-100 rounded">30,000+ Hours</span>
+          <a
+            href="https://drive.google.com/file/d/1wTchqmCIgEegqpFtsA0eUO_ljoGv30Yo/view"
+            target="_blank"
+            rel="noopener"
+            class="px-3 py-1.5 text-xs font-medium text-purple-700 bg-purple-50 border border-purple-200 rounded hover:bg-purple-100 transition"
+          >
+            Download Catalogue
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Products -->
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+    {productCategories.map((category) => (
+      <div class="mb-10">
+        <h2 class="text-lg font-semibold text-slate-700 mb-4 pb-2 border-b border-slate-200">
+          {category.name}
+        </h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+          {category.products.map((product) => (
+            <div class="bg-slate-50 border border-slate-200 rounded-lg p-4 hover:border-purple-300 transition">
+              <p class="text-sm font-medium text-slate-800 mb-1">{product.name}</p>
+              <p class="text-xs text-slate-500">{product.spec}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <!-- Applications -->
+  <div class="bg-slate-50 border-y border-slate-200 py-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <h3 class="text-lg font-semibold text-slate-800 mb-6">Applications</h3>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="bg-white border border-slate-200 rounded-lg p-4 text-center">
+          <p class="font-medium text-slate-700">Office</p>
+          <p class="text-xs text-slate-500">Panels, Downlights</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-lg p-4 text-center">
+          <p class="font-medium text-slate-700">Retail</p>
+          <p class="text-xs text-slate-500">Spotlights, Track</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-lg p-4 text-center">
+          <p class="font-medium text-slate-700">Warehouse</p>
+          <p class="text-xs text-slate-500">Highbays, Battens</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-lg p-4 text-center">
+          <p class="font-medium text-slate-700">Outdoor</p>
+          <p class="text-xs text-slate-500">Flood, Street</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div class="bg-slate-800 py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div>
+          <h2 class="text-xl font-semibold text-white mb-2">Interested in Prisled?</h2>
+          <p class="text-slate-400">Contact us for pricing and availability.</p>
+        </div>
+        <div class="flex gap-3">
+          <a href="/#contact" class="px-5 py-2.5 bg-purple-600 text-white font-medium rounded hover:bg-purple-700 transition">
+            Request Quote
+          </a>
+          <a href="tel:+6281111128383" class="px-5 py-2.5 border border-slate-600 text-slate-300 font-medium rounded hover:border-slate-500 hover:text-white transition">
+            Call Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <div class="bg-white py-6 border-t border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex justify-between items-center">
+      <a href="/brands/histar" class="text-sm text-slate-600 hover:text-slate-800 transition">
+        ← HiSTAR
+      </a>
+      <a href="/brands" class="text-sm text-slate-600 hover:text-slate-800 transition">
+        All Brands →
+      </a>
+    </div>
+  </div>
+</BaseLayout>

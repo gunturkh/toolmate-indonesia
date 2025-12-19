@@ -1,0 +1,22 @@
+{
+  "slug": "rapala-vmc",
+  "image": "/images/projects/rapala-renovation.jpg",
+  "badge": "M&E",
+  "badgeColor": "bg-yellow-600",
+  "title": "PT. Rapala VMC",
+  "subtitle": "Renovation & M&E",
+  "description": "Full facility renovation including flooring works and M&E (Mechanical & Electrical) installation.",
+  "fullDescription": "A comprehensive facility renovation project for PT. Rapala VMC, covering both civil works and complete mechanical & electrical systems upgrade. The project transformed the manufacturing facility to modern standards while maintaining production continuity.",
+  "scope": [
+    "Facility layout redesign and renovation",
+    "Flooring replacement and finishing",
+    "Electrical system upgrade and rewiring",
+    "Mechanical systems installation",
+    "Lighting and power distribution",
+    "Fire alarm and safety systems"
+  ],
+  "client": "PT. Rapala VMC",
+  "location": "Batam, Indonesia",
+  "year": "2023",
+  "category": "mne"
+}

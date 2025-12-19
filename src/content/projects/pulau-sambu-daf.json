@@ -1,0 +1,21 @@
+{
+  "slug": "pulau-sambu-daf",
+  "image": "/images/projects/pulau-sambu-daf.jpg",
+  "badge": "WWTP",
+  "badgeColor": "bg-green-600",
+  "title": "PT. Pulau Sambu",
+  "subtitle": "DAF System",
+  "description": "Dissolved Air Flotation (DAF) system installation for industrial wastewater treatment.",
+  "fullDescription": "PT Toolmate Technologies Indonesia implemented a Dissolved Air Flotation (DAF) system for PT. Pulau Sambu at Guntung. The DAF system is designed to remove suspended solids, oils, and other contaminants from industrial wastewater through the flotation process, ensuring compliance with environmental standards.",
+  "scope": [
+    "DAF system design and engineering",
+    "Flotation tank installation",
+    "Skimmer and scraper mechanism setup",
+    "Piping and pump installation",
+    "Commissioning and performance optimization"
+  ],
+  "client": "PT. Pulau Sambu",
+  "location": "Guntung, Indonesia",
+  "year": "2023",
+  "category": "wwtp"
+}

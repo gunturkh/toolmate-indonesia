@@ -1,0 +1,21 @@
+{
+  "slug": "sincom-panasonic",
+  "image": "/images/projects/sincom-panasonic-hvac.jpg",
+  "badge": "HVAC",
+  "badgeColor": "bg-blue-600",
+  "title": "PT. Sincom Panasonic",
+  "subtitle": "HVAC Works",
+  "description": "Industrial HVAC system installation for manufacturing facility including ducting and air conditioning.",
+  "fullDescription": "PT Toolmate Technologies Indonesia completed a comprehensive HVAC project for PT. Sincom Panasonic's manufacturing facility. The project involved installation of industrial air conditioning systems, ducting networks, and ventilation equipment to maintain optimal working conditions in the production area.",
+  "scope": [
+    "Industrial AC unit installation",
+    "Ducting fabrication and installation",
+    "Ventilation system setup",
+    "Air handling unit installation",
+    "System balancing and commissioning"
+  ],
+  "client": "PT. Sincom Panasonic",
+  "location": "Batam, Indonesia",
+  "year": "2022",
+  "category": "hvac"
+}

@@ -1,0 +1,28 @@
+{
+  "name": "toolmate-indonesia",
+  "version": "1.0.0",
+  "description": "PT Toolmate Technologies Indonesia - HVAC & WWTP Specialist",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gunturkh/toolmate-indonesia.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gunturkh/toolmate-indonesia/issues"
+  },
+  "homepage": "https://github.com/gunturkh/toolmate-indonesia#readme",
+  "dependencies": {
+    "@astrojs/tailwind": "^6.0.2",
+    "astro": "^5.16.6",
+    "tailwindcss": "^3.4.19"
+  }
+}

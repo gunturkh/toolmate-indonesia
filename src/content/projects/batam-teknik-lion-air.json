@@ -1,0 +1,21 @@
+{
+  "slug": "batam-teknik-lion-air",
+  "image": "/images/projects/batam-teknik-hvac.jpg",
+  "badge": "HVAC",
+  "badgeColor": "bg-blue-600",
+  "title": "PT. Batam Teknik (Lion Air Warehouse)",
+  "subtitle": "HVAC Works - Air Con & Ducting Work",
+  "description": "Complete HVAC works including air conditioning installation and large scale ducting for aircraft maintenance warehouse.",
+  "fullDescription": "A comprehensive HVAC installation project for PT. Batam Teknik's Lion Air Warehouse facility. The project included installation of multiple air conditioning units, extensive insulated ducting systems, and ventilation equipment to meet aviation industry climate control standards for aircraft maintenance operations.",
+  "scope": [
+    "Air conditioning unit installation",
+    "Insulated ducting fabrication and installation",
+    "Outdoor condenser unit setup",
+    "Ventilation and exhaust systems",
+    "Clean room air handling integration"
+  ],
+  "client": "PT. Batam Teknik (Lion Air Group)",
+  "location": "Batam, Indonesia",
+  "year": "2021",
+  "category": "hvac"
+}

@@ -1,0 +1,108 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+
+const brands = [
+  {
+    name: 'Megaman',
+    slug: 'megaman',
+    logo: '/images/logo/megaman.jpeg',
+    tagline: 'German LED Brand since 1994',
+    description: '31+ years of lighting excellence. Present in 52+ countries with premium LED solutions.',
+  },
+  {
+    name: 'HiSTAR',
+    slug: 'histar',
+    logo: '/images/logo/histar.jpeg',
+    tagline: 'Future Always Bright',
+    description: 'SNI certified LED products by PT. Fullmoon Jaya Abadi. Quality at affordable prices.',
+  },
+  {
+    name: 'Prisled',
+    slug: 'prisled',
+    logo: '/images/logo/prisled.png',
+    tagline: 'Commercial & Industrial LED',
+    description: 'Modern LED solutions for offices, retail, warehouses, and outdoor applications.',
+  }
+];
+---
+
+<BaseLayout
+  title="LED Lighting Brands"
+  description="Official distributor for Megaman, HiSTAR, and Prisled LED lighting brands in Batam. Premium LED bulbs, downlights, panels, floodlights and industrial lighting."
+  keywords={['LED lighting Batam', 'Megaman Indonesia', 'HiSTAR LED', 'Prisled', 'lighting distributor']}
+  activePage="brands"
+  flexLayout={true}
+>
+  <!-- Header -->
+  <div class="bg-white pt-28 pb-12 border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <h1 class="text-2xl md:text-3xl font-bold text-slate-800 mb-2">LED Lighting Brands</h1>
+      <p class="text-slate-600">Official distributor in Batam and Riau Islands</p>
+    </div>
+  </div>
+
+  <!-- Brands -->
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+    <div class="grid md:grid-cols-3 gap-6">
+      {brands.map((brand) => (
+        <a href={`/brands/${brand.slug}`} class="group block">
+          <div class="bg-white border border-slate-200 rounded-lg p-6 h-full hover:border-slate-300 hover:shadow-sm transition">
+            <div class="h-20 flex items-center justify-center mb-6">
+              <img
+                src={brand.logo}
+                alt={brand.name}
+                class="max-h-full max-w-full object-contain"
+              />
+            </div>
+            <h2 class="text-lg font-semibold text-slate-800 mb-1">{brand.name}</h2>
+            <p class="text-sm text-slate-500 mb-3">{brand.tagline}</p>
+            <p class="text-sm text-slate-600 mb-4">{brand.description}</p>
+            <span class="text-sm text-slate-500 group-hover:text-slate-700 transition">
+              View products →
+            </span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+
+  <!-- Why Us -->
+  <div class="bg-slate-50 border-y border-slate-200 py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <h2 class="text-lg font-semibold text-slate-800 mb-6">Why choose us</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div>
+          <p class="font-medium text-slate-800 mb-1">Genuine Products</p>
+          <p class="text-sm text-slate-500">100% authentic with manufacturer warranty</p>
+        </div>
+        <div>
+          <p class="font-medium text-slate-800 mb-1">Competitive Pricing</p>
+          <p class="text-sm text-slate-500">Best rates for wholesale orders</p>
+        </div>
+        <div>
+          <p class="font-medium text-slate-800 mb-1">Fast Delivery</p>
+          <p class="text-sm text-slate-500">Quick shipping across Batam</p>
+        </div>
+        <div>
+          <p class="font-medium text-slate-800 mb-1">Technical Support</p>
+          <p class="text-sm text-slate-500">Expert consultation available</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div class="bg-slate-800 py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div>
+          <h2 class="text-xl font-semibold text-white mb-2">Need a quote?</h2>
+          <p class="text-slate-400">Contact us for bulk orders, project pricing, or technical specs.</p>
+        </div>
+        <a href="/#contact" class="px-5 py-2.5 bg-white text-slate-800 font-medium rounded hover:bg-slate-100 transition">
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

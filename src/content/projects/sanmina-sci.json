@@ -1,0 +1,21 @@
+{
+  "slug": "sanmina-sci",
+  "image": "/images/projects/sanmina-hvac.jpg",
+  "badge": "HVAC",
+  "badgeColor": "bg-blue-600",
+  "title": "PT. Sanmina SCI",
+  "subtitle": "HVAC System",
+  "description": "Installation of chillers and precision air conditioning for electronics manufacturing floor.",
+  "fullDescription": "PT Toolmate Technologies Indonesia delivered a precision HVAC system for PT. Sanmina SCI's electronics manufacturing facility. The project required stringent temperature and humidity control to maintain optimal conditions for sensitive electronic component production.",
+  "scope": [
+    "Chiller system installation and commissioning",
+    "Precision air conditioning units (PAC)",
+    "Clean room HVAC integration",
+    "Building management system (BMS) integration",
+    "Air filtration and quality monitoring"
+  ],
+  "client": "PT. Sanmina SCI",
+  "location": "Batam, Indonesia",
+  "year": "2022",
+  "category": "hvac"
+}

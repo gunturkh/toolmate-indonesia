@@ -1,0 +1,258 @@
+/**
+ * Centralized SEO Configuration
+ *
+ * Update these values to customize your site's SEO metadata.
+ * All pages will inherit from defaultSEO unless overridden.
+ */
+
+export interface SEOData {
+  title: string;
+  description: string;
+  keywords?: string[];
+  image?: string;
+  type?: 'website' | 'article' | 'product';
+  noindex?: boolean;
+}
+
+// Base site information
+export const siteConfig = {
+  name: 'PT. Toolmate Technologies Indonesia',
+  shortName: 'Toolmate Indonesia',
+  url: 'https://toolmate-indonesia.com', // Update with your actual domain
+  locale: 'id_ID',
+  defaultImage: '/images/og-default.jpg', // Create this image (1200x630px recommended)
+  twitterHandle: '@toolmateid', // Update if you have Twitter
+  phone: '+62 811-1112-8383',
+  email: 'toolmate.pttti@gmail.com',
+  address: {
+    street: 'Jl. Nagoya Hill Blok R3 No 6-7, Lubuk Baja Kota, Kec. Lubuk Baja',
+    city: 'Kota Batam',
+    region: 'Kepulauan Riau',
+    postalCode: '29444',
+    country: 'ID',
+  },
+};
+
+// Default SEO for all pages
+export const defaultSEO: SEOData = {
+  title: 'HVAC & WWTP Specialist in Batam',
+  description:
+    'PT Toolmate Technologies Indonesia - Your trusted partner for HVAC systems, Waste Water Treatment Plants (WWTP), industrial fabrication, and M&E engineering in Batam, Indonesia. Serving manufacturing industries since 2016.',
+  keywords: [
+    'HVAC Batam',
+    'WWTP Batam',
+    'waste water treatment',
+    'industrial HVAC',
+    'M&E contractor Batam',
+    'clean room systems',
+    'ducting fabrication',
+    'water treatment plant',
+    'general contractor Batam',
+    'PT Toolmate Indonesia',
+    'industrial engineering Batam',
+    'MBR system',
+    'MBBR system',
+  ],
+  type: 'website',
+};
+
+// Page-specific SEO overrides
+export const pageSEO: Record<string, SEOData> = {
+  home: {
+    title: 'HVAC & WWTP Specialist in Batam',
+    description:
+      'PT Toolmate Technologies Indonesia - Leading provider of HVAC systems, Waste Water Treatment (WWTP), and industrial M&E solutions in Batam. 8+ years experience serving multinational clients.',
+    keywords: [
+      ...defaultSEO.keywords!,
+      'industrial solutions Batam',
+      'environmental engineering',
+    ],
+  },
+
+  services: {
+    title: 'Engineering Services - HVAC, WWTP, M&E',
+    description:
+      'Comprehensive industrial engineering services: HVAC & MVAC systems, Waste Water Treatment Plants, ducting fabrication, clean room systems, and general contracting in Batam Indonesia.',
+    keywords: [
+      'HVAC services Batam',
+      'WWTP design',
+      'ducting installation',
+      'cooling tower service',
+      'exhaust duct systems',
+      'epoxy flooring Batam',
+      'steel structure fabrication',
+      'chiller installation',
+    ],
+  },
+
+  products: {
+    title: 'Biology Genesis - Natural Wastewater Treatment',
+    description:
+      'Biology Genesis by Naturelabs Biotech - Natural bio-technology solution for industrial waste water treatment. Safe, non-toxic bacterial culture for WWTP, STP, and grease traps.',
+    keywords: [
+      'Biology Genesis',
+      'bio wastewater treatment',
+      'natural WWTP solution',
+      'bacterial water treatment',
+      'grease trap treatment',
+      'STP bacteria',
+      'POME treatment',
+      'Naturelabs Biotech',
+    ],
+    type: 'product',
+  },
+
+  projects: {
+    title: 'Project References & Portfolio',
+    description:
+      'View our completed projects for multinational clients including Caterpillar, Panasonic, Yokogawa, and more. HVAC, WWTP, civil works, and M&E installations in Batam.',
+    keywords: [
+      'Toolmate projects',
+      'industrial projects Batam',
+      'HVAC project reference',
+      'WWTP installation',
+      'Caterpillar contractor',
+      'Panasonic contractor Batam',
+    ],
+  },
+
+  brands: {
+    title: 'LED Lighting Brands - Official Distributor',
+    description:
+      'Official distributor for Megaman, HiSTAR, and Prisled LED lighting brands in Batam. Premium LED bulbs, downlights, panels, floodlights and industrial lighting solutions.',
+    keywords: [
+      'LED lighting Batam',
+      'Megaman Indonesia',
+      'HiSTAR LED',
+      'Prisled distributor',
+      'LED bulbs Batam',
+      'industrial lighting',
+      'LED downlight',
+      'LED panel',
+      'LED floodlight',
+    ],
+  },
+
+  megaman: {
+    title: 'Megaman LED Lighting - German Quality',
+    description:
+      'Megaman LED lighting products - German brand since 1994. Premium LED bulbs, downlights, panels, floodlights and more. Official distributor in Batam, Indonesia.',
+    keywords: [
+      'Megaman LED',
+      'Megaman Indonesia',
+      'German LED brand',
+      'LED bulbs Batam',
+      'Megaman downlight',
+      'LED panel',
+      'industrial lighting',
+    ],
+    type: 'product',
+  },
+
+  histar: {
+    title: 'HiSTAR LED Lighting - Future Always Bright',
+    description:
+      'HiSTAR LED lighting products by PT. Fullmoon Jaya Abadi. SNI certified LED bulbs, downlights, floodlights, solar street lights. Official distributor in Batam.',
+    keywords: [
+      'HiSTAR LED',
+      'HiSTAR Indonesia',
+      'SNI LED bulbs',
+      'LED lighting Batam',
+      'solar street light',
+      'LED floodlight',
+      'affordable LED',
+    ],
+    type: 'product',
+  },
+
+  prisled: {
+    title: 'Prisled LED Lighting - Innovative Solutions',
+    description:
+      'Prisled LED lighting products for commercial and industrial applications. LED bulbs, downlights, panels, floodlights and more. Official distributor in Batam.',
+    keywords: [
+      'Prisled LED',
+      'LED lighting Batam',
+      'commercial LED',
+      'industrial lighting',
+      'LED downlight',
+      'LED panel',
+      'LED floodlight',
+    ],
+    type: 'product',
+  },
+};
+
+// Structured data for organization (JSON-LD)
+export const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: siteConfig.name,
+  url: siteConfig.url,
+  logo: `${siteConfig.url}/images/logo.png`,
+  description: defaultSEO.description,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: siteConfig.address.street,
+    addressLocality: siteConfig.address.city,
+    addressRegion: siteConfig.address.region,
+    postalCode: siteConfig.address.postalCode,
+    addressCountry: siteConfig.address.country,
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: siteConfig.phone,
+    contactType: 'sales',
+    availableLanguage: ['Indonesian', 'English'],
+  },
+  sameAs: [
+    // Add your social media URLs here
+    // 'https://www.facebook.com/toolmateindonesia',
+    // 'https://www.linkedin.com/company/toolmate-indonesia',
+  ],
+};
+
+// Structured data for local business
+export const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': `${siteConfig.url}/#business`,
+  name: siteConfig.name,
+  image: `${siteConfig.url}/images/og-default.jpg`,
+  url: siteConfig.url,
+  telephone: siteConfig.phone,
+  email: siteConfig.email,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: siteConfig.address.street,
+    addressLocality: siteConfig.address.city,
+    addressRegion: siteConfig.address.region,
+    postalCode: siteConfig.address.postalCode,
+    addressCountry: siteConfig.address.country,
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 1.13, // Update with exact coordinates
+    longitude: 104.0016,
+  },
+  priceRange: '$$',
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '08:00',
+    closes: '17:00',
+  },
+  areaServed: {
+    '@type': 'City',
+    name: 'Batam',
+  },
+};
+
+// Helper to get SEO for a page
+export function getPageSEO(page: string): SEOData {
+  return pageSEO[page] || defaultSEO;
+}
+
+// Helper to generate full title
+export function getFullTitle(pageTitle: string): string {
+  return `${pageTitle} | ${siteConfig.name}`;
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "caterpillar-indonesia",
+  "image": "/images/projects/caterpillar-epoxy.jpg",
+  "badge": "Civil",
+  "badgeColor": "bg-yellow-600",
+  "title": "PT. Caterpillar Indonesia",
+  "subtitle": "Epoxy Painting",
+  "description": "Industrial grade epoxy flooring application for heavy machinery manufacturing plant.",
+  "fullDescription": "PT Toolmate Technologies Indonesia executed a large-scale industrial epoxy flooring project for PT. Caterpillar Indonesia's manufacturing facility. The project demanded high-performance flooring solutions capable of withstanding heavy machinery operations and chemical exposure.",
+  "scope": [
+    "Surface preparation and concrete repair",
+    "Industrial-grade epoxy primer application",
+    "Multi-layer epoxy coating system",
+    "Anti-slip finish for safety compliance",
+    "Line marking for traffic and safety zones"
+  ],
+  "client": "PT. Caterpillar Indonesia",
+  "location": "Batam, Indonesia",
+  "year": "2020",
+  "category": "civil"
+}

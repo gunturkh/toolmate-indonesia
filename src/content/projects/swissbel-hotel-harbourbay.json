@@ -1,0 +1,21 @@
+{
+  "slug": "swissbel-hotel-harbourbay",
+  "image": "/images/projects/swissbel-hotel-stp.jpg",
+  "badge": "WWTP",
+  "badgeColor": "bg-green-600",
+  "title": "Swissbel Hotel Harbourbay",
+  "subtitle": "STP Project (Lamela & MBBR System)",
+  "description": "Advanced sewage treatment using Lamella clarifier and MBBR technology for hotel operations.",
+  "fullDescription": "PT Toolmate Technologies Indonesia completed an advanced Sewage Treatment Plant project for Swissbel Hotel Harbourbay. The system combines Lamella clarifier technology with MBBR (Moving Bed Biofilm Reactor) to efficiently treat hotel wastewater, ensuring environmental compliance and water reuse potential.",
+  "scope": [
+    "Lamella clarifier system installation",
+    "MBBR (Moving Bed Biofilm Reactor) setup",
+    "Treatment tank construction",
+    "Media and biofilm system installation",
+    "System commissioning and optimization"
+  ],
+  "client": "Swissbel Hotel Harbourbay",
+  "location": "Batam, Indonesia",
+  "year": "2023",
+  "category": "wwtp"
+}

@@ -1,105 +1,183 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 
-const productCategories = [
+// Product series with brochure links
+const products = [
   {
-    name: 'LED Bulbs',
-    products: [
-      { name: 'A-Shape', spec: '5W - 20W | E27' },
-      { name: 'T-Shape', spec: '15W - 50W | E27' },
-      { name: 'Capsule', spec: '7W - 15W | E27' },
+    category: 'SL Series - Solar Lighting',
+    items: [
+      {
+        name: 'SL Series 300 ISL 40-100W',
+        spec: '2x6 Configuration',
+        brochure: 'https://drive.google.com/file/d/1oiEK0ZzTQQ1yuj-CfeXfFQgkGogNCNIA/view?usp=sharing'
+      },
+      {
+        name: 'SL Series 300 ISL 60-120W',
+        spec: '3x6 Configuration',
+        brochure: 'https://drive.google.com/file/d/1EnLauXMqPQiOFsHmKdTjrAh0ruNWxLnV/view?usp=sharing'
+      },
+      {
+        name: 'SL Series 100 CMB - 40W',
+        spec: 'Compact Module',
+        brochure: 'https://drive.google.com/file/d/1KCMvLavwaoxbw-TU7h4cINmR44uAvKEp/view?usp=sharing'
+      },
+      {
+        name: 'SL Series 100 CMB - 90W',
+        spec: 'Compact Module',
+        brochure: 'https://drive.google.com/file/d/15Q9U4N4frWLxXoYzyxGLT800-4P2Rf5H/view?usp=sharing'
+      },
+      {
+        name: 'SL300 Solar Lighting A1-I',
+        spec: '2025 Model',
+        brochure: 'https://drive.google.com/file/d/1QdwrsGcc0hoKiymM2wYjcO9j9E3WNrxi/view?usp=sharing'
+      },
     ]
   },
   {
-    name: 'Downlights',
-    products: [
-      { name: 'Slim Panel', spec: '6W - 24W | Tri-Color' },
-      { name: 'Anti-Glare', spec: '7W - 18W | UGR<19' },
-      { name: 'Surface Mount', spec: '7W - 24W' },
+    category: 'Industrial Series',
+    items: [
+      {
+        name: 'HS500 MB Super Series',
+        spec: 'High-Power Industrial',
+        brochure: 'https://drive.google.com/file/d/1SAO35ZUR4zex8cb1sSHQGMc_v2UxqM0c/view?usp=sharing'
+      },
+      {
+        name: 'CS JS Series B Crane Series',
+        spec: 'Crane & Heavy Equipment',
+        brochure: 'https://drive.google.com/file/d/1x4ot74szaDv3CMNVq6hOhUtp9f8W0ycf/view?usp=sharing'
+      },
     ]
+  }
+];
+
+// Certificates
+const certificates = [
+  {
+    name: 'CS100 ATEX Certificate',
+    description: 'Explosion-proof certification for hazardous environments',
+    link: 'https://drive.google.com/file/d/1YHVhi_nHO-3tflILTwBhx4geImv7JS4I/view?usp=sharing'
+  }
+];
+
+// Full catalogue
+const catalogueLink = 'https://drive.google.com/file/d/1wTchqmCIgEegqpFtsA0eUO_ljoGv30Yo/view';
+
+// Project references
+const projectImages = [
+  {
+    src: '/images/brands/prisled/prisled-solar-installation-1.jpg',
+    title: 'Solar Street Light Installation',
+    description: 'Crane installation of solar-powered street lighting'
   },
   {
-    name: 'Spotlights & Track',
-    products: [
-      { name: 'COB Spotlight', spec: '7W - 30W | CRI>90' },
-      { name: 'Track Light', spec: '10W - 40W | 2/3-Wire' },
-      { name: 'Magnetic Track', spec: '6W - 20W | 48V DC' },
-    ]
+    src: '/images/brands/prisled/prisled-solar-installation-2.jpg',
+    title: 'Solar Street Light Project',
+    description: 'Wide view of solar lighting installation site'
   },
   {
-    name: 'Panels & Battens',
-    products: [
-      { name: 'LED Panel', spec: '18W - 72W | 600x600' },
-      { name: 'Backlit Panel', spec: '40W - 60W | 100+ lm/W' },
-      { name: 'LED Batten', spec: '18W - 45W | Linkable' },
-    ]
+    src: '/images/brands/prisled/prisled-floodlight-modules-1.jpg',
+    title: 'LED Floodlight Modules',
+    description: 'High-power LED floodlight module units'
   },
   {
-    name: 'Outdoor & Industrial',
-    products: [
-      { name: 'Floodlight', spec: '10W - 200W | IP65' },
-      { name: 'Highbay', spec: '100W - 200W | UFO/Linear' },
-      { name: 'Street Light', spec: '30W - 150W | IP66' },
-      { name: 'Tri-Proof', spec: '20W - 60W | IP65' },
-    ]
+    src: '/images/brands/prisled/prisled-crane-led-1.jpg',
+    title: 'Crane LED Lighting',
+    description: 'Industrial crane LED lighting in operation'
   },
   {
-    name: 'Strip & Accessories',
-    products: [
-      { name: 'Flex Strip', spec: '4.8W - 19.2W/m | 12/24V' },
-      { name: 'Neon Flex', spec: '8W - 12W/m | Bendable' },
-      { name: 'LED Driver', spec: '20W - 350W | IP20/IP67' },
-    ]
+    src: '/images/brands/prisled/prisled-bangkinang-streetlight-1.jpg',
+    title: 'Bangkinang Street Light',
+    description: 'Solar street light installation in Bangkinang, Riau'
   },
+  {
+    src: '/images/brands/prisled/prisled-bangkinang-streetlight-2.jpg',
+    title: 'Bangkinang Street Light',
+    description: 'Solar street light installation in Bangkinang, Riau'
+  },
+  {
+    src: '/images/brands/prisled/prisled-industrial-crane-led-1.jpg',
+    title: 'Industrial Crane LED',
+    description: 'Rail-mounted industrial crane LED lighting'
+  }
 ];
 ---
 
 <BaseLayout
   title="Prisled LED Lighting"
-  description="Prisled LED lighting products for commercial and industrial applications. LED bulbs, downlights, panels, floodlights and more. Official distributor in Batam."
-  keywords={['Prisled LED', 'LED lighting Batam', 'commercial LED', 'industrial lighting', 'LED downlight', 'LED panel', 'LED floodlight']}
+  description="Prisled LED lighting products for commercial and industrial applications. Solar lighting, industrial LED, and explosion-proof solutions. Official distributor in Batam."
+  keywords={['Prisled LED', 'LED lighting Batam', 'solar LED', 'industrial lighting', 'ATEX certified LED', 'explosion proof lighting']}
   activePage="brands"
   flexLayout={true}
 >
   <!-- Header -->
-  <div class="bg-white pt-28 pb-12 border-b border-slate-200">
+  <div class="bg-gradient-to-b from-slate-900 to-slate-800 pt-32 pb-16">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
         <div class="flex items-center gap-6">
-          <img src="/images/logo/prisled.png" alt="Prisled" class="h-16 md:h-20 object-contain" loading="eager" />
+          <div class="bg-white p-4 rounded-xl shadow-lg">
+            <img src="/images/logo/prisled.png" alt="Prisled" class="h-16 md:h-20 object-contain" loading="eager" />
+          </div>
           <div>
-            <p class="text-sm text-slate-500 mb-1">Commercial & Industrial LED</p>
-            <h1 class="text-2xl md:text-3xl font-bold text-slate-800">Prisled</h1>
+            <p class="text-purple-300 text-sm font-medium mb-1">Official Distributor</p>
+            <h1 class="text-3xl md:text-4xl font-bold text-white">Prisled</h1>
+            <p class="text-slate-400 mt-1">Industrial & Solar LED Solutions</p>
           </div>
         </div>
-        <div class="flex flex-wrap items-center gap-2">
-          <span class="px-2 py-1 text-xs font-medium text-slate-600 bg-slate-100 rounded">Energy Saving</span>
-          <span class="px-2 py-1 text-xs font-medium text-slate-600 bg-slate-100 rounded">30,000+ Hours</span>
+        <div class="flex flex-col sm:flex-row gap-3">
           <a
-            href="https://drive.google.com/file/d/1wTchqmCIgEegqpFtsA0eUO_ljoGv30Yo/view"
+            href={catalogueLink}
             target="_blank"
             rel="noopener"
-            class="px-3 py-1.5 text-xs font-medium text-purple-700 bg-purple-50 border border-purple-200 rounded hover:bg-purple-100 transition"
+            class="inline-flex items-center justify-center px-5 py-3 bg-purple-600 text-white font-medium rounded-lg hover:bg-purple-700 transition"
           >
-            Download Catalogue
+            <i class="fas fa-book mr-2"></i>
+            Full Catalogue
+          </a>
+          <a
+            href="/#contact"
+            class="inline-flex items-center justify-center px-5 py-3 border border-slate-500 text-white font-medium rounded-lg hover:bg-white/10 transition"
+          >
+            <i class="fas fa-envelope mr-2"></i>
+            Request Quote
           </a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Products -->
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
-    {productCategories.map((category) => (
-      <div class="mb-10">
-        <h2 class="text-lg font-semibold text-slate-700 mb-4 pb-2 border-b border-slate-200">
-          {category.name}
-        </h2>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-          {category.products.map((product) => (
-            <div class="bg-slate-50 border border-slate-200 rounded-lg p-4 hover:border-purple-300 transition">
-              <p class="text-sm font-medium text-slate-800 mb-1">{product.name}</p>
-              <p class="text-xs text-slate-500">{product.spec}</p>
+  <!-- Products Section -->
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16">
+    <div class="text-center mb-12">
+      <h2 class="text-2xl md:text-3xl font-bold text-slate-800 mb-3">Our Products</h2>
+      <p class="text-slate-600">Download product brochures for detailed specifications</p>
+    </div>
+
+    {products.map((category) => (
+      <div class="mb-12">
+        <h3 class="text-lg font-bold text-slate-700 mb-6 pb-3 border-b-2 border-purple-200 flex items-center">
+          <i class="fas fa-lightbulb text-purple-500 mr-3"></i>
+          {category.category}
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {category.items.map((product) => (
+            <div class="bg-white border border-slate-200 rounded-xl p-6 hover:border-purple-300 hover:shadow-lg transition group">
+              <div class="flex items-start justify-between mb-4">
+                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                  <i class="fas fa-solar-panel text-purple-600 text-xl"></i>
+                </div>
+              </div>
+              <h4 class="text-lg font-bold text-slate-800 mb-1">{product.name}</h4>
+              <p class="text-sm text-slate-500 mb-4">{product.spec}</p>
+              <a
+                href={product.brochure}
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center text-sm font-medium text-purple-600 hover:text-purple-800 transition"
+              >
+                <i class="fas fa-file-pdf mr-2"></i>
+                Download Brochure
+                <i class="fas fa-external-link-alt ml-2 text-xs"></i>
+              </a>
             </div>
           ))}
         </div>
@@ -107,45 +185,199 @@ const productCategories = [
     ))}
   </div>
 
-  <!-- Applications -->
-  <div class="bg-slate-50 border-y border-slate-200 py-10">
+  <!-- Certificates Section -->
+  <div class="bg-slate-50 border-y border-slate-200 py-16">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <h3 class="text-lg font-semibold text-slate-800 mb-6">Applications</h3>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div class="bg-white border border-slate-200 rounded-lg p-4 text-center">
-          <p class="font-medium text-slate-700">Office</p>
-          <p class="text-xs text-slate-500">Panels, Downlights</p>
+      <div class="text-center mb-10">
+        <h2 class="text-2xl font-bold text-slate-800 mb-3">Certifications</h2>
+        <p class="text-slate-600">Quality and safety certifications for our products</p>
+      </div>
+
+      <div class="flex justify-center">
+        {certificates.map((cert) => (
+          <a
+            href={cert.link}
+            target="_blank"
+            rel="noopener"
+            class="bg-white border border-slate-200 rounded-xl p-6 hover:border-green-300 hover:shadow-lg transition max-w-md w-full group"
+          >
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 bg-green-100 rounded-lg flex items-center justify-center shrink-0">
+                <i class="fas fa-certificate text-green-600 text-2xl"></i>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-bold text-slate-800 group-hover:text-green-700 transition">{cert.name}</h4>
+                <p class="text-sm text-slate-500">{cert.description}</p>
+              </div>
+              <div class="shrink-0">
+                <i class="fas fa-download text-slate-400 group-hover:text-green-600 transition"></i>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- Project References Section -->
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16">
+    <div class="text-center mb-10">
+      <h2 class="text-2xl font-bold text-slate-800 mb-3">Project References</h2>
+      <p class="text-slate-600">See our Prisled installations in action</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {projectImages.map((image) => (
+        <div class="group relative overflow-hidden rounded-xl bg-slate-100 aspect-[4/3] cursor-pointer" data-lightbox={image.src}>
+          <img
+            src={image.src}
+            alt={image.title}
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div class="absolute bottom-0 left-0 right-0 p-4">
+              <h4 class="text-white font-bold text-sm">{image.title}</h4>
+              <p class="text-white/80 text-xs mt-1">{image.description}</p>
+            </div>
+          </div>
+          <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
+            <div class="w-8 h-8 bg-white/90 rounded-full flex items-center justify-center">
+              <i class="fas fa-expand text-slate-700 text-sm"></i>
+            </div>
+          </div>
         </div>
-        <div class="bg-white border border-slate-200 rounded-lg p-4 text-center">
-          <p class="font-medium text-slate-700">Retail</p>
-          <p class="text-xs text-slate-500">Spotlights, Track</p>
+      ))}
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center p-4">
+    <button id="lightbox-close" class="absolute top-4 right-4 text-white/80 hover:text-white transition">
+      <i class="fas fa-times text-2xl"></i>
+    </button>
+    <button id="lightbox-prev" class="absolute left-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white transition">
+      <i class="fas fa-chevron-left text-3xl"></i>
+    </button>
+    <button id="lightbox-next" class="absolute right-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white transition">
+      <i class="fas fa-chevron-right text-3xl"></i>
+    </button>
+    <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[85vh] object-contain" />
+    <div id="lightbox-caption" class="absolute bottom-4 left-0 right-0 text-center text-white">
+      <p id="lightbox-title" class="font-bold"></p>
+      <p id="lightbox-desc" class="text-sm text-white/70 mt-1"></p>
+    </div>
+  </div>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
+    const lightboxTitle = document.getElementById('lightbox-title');
+    const lightboxDesc = document.getElementById('lightbox-desc');
+    const lightboxClose = document.getElementById('lightbox-close');
+    const lightboxPrev = document.getElementById('lightbox-prev');
+    const lightboxNext = document.getElementById('lightbox-next');
+
+    const images = document.querySelectorAll('[data-lightbox]');
+    let currentIndex = 0;
+
+    const imageData = Array.from(images).map((el) => ({
+      src: el.getAttribute('data-lightbox'),
+      title: el.querySelector('h4')?.textContent || '',
+      desc: el.querySelector('p')?.textContent || ''
+    }));
+
+    function showImage(index: number) {
+      if (index < 0) index = imageData.length - 1;
+      if (index >= imageData.length) index = 0;
+      currentIndex = index;
+
+      const data = imageData[currentIndex];
+      if (lightboxImg && data.src) lightboxImg.src = data.src;
+      if (lightboxTitle) lightboxTitle.textContent = data.title;
+      if (lightboxDesc) lightboxDesc.textContent = data.desc;
+    }
+
+    images.forEach((el, index) => {
+      el.addEventListener('click', () => {
+        showImage(index);
+        if (lightbox) lightbox.classList.remove('hidden');
+        if (lightbox) lightbox.classList.add('flex');
+      });
+    });
+
+    function closeLightbox() {
+      if (lightbox) lightbox.classList.add('hidden');
+      if (lightbox) lightbox.classList.remove('flex');
+    }
+
+    lightboxClose?.addEventListener('click', closeLightbox);
+    lightboxPrev?.addEventListener('click', () => showImage(currentIndex - 1));
+    lightboxNext?.addEventListener('click', () => showImage(currentIndex + 1));
+
+    lightbox?.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (lightbox?.classList.contains('hidden')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+      if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+    });
+  </script>
+
+  <!-- Features -->
+  <div class="bg-purple-900 py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <div class="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-sun text-yellow-300 text-xl"></i>
+          </div>
+          <h4 class="font-bold text-white mb-1">Solar Powered</h4>
+          <p class="text-purple-200 text-sm">Eco-friendly solutions</p>
         </div>
-        <div class="bg-white border border-slate-200 rounded-lg p-4 text-center">
-          <p class="font-medium text-slate-700">Warehouse</p>
-          <p class="text-xs text-slate-500">Highbays, Battens</p>
+        <div>
+          <div class="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-shield-alt text-green-300 text-xl"></i>
+          </div>
+          <h4 class="font-bold text-white mb-1">ATEX Certified</h4>
+          <p class="text-purple-200 text-sm">Explosion-proof options</p>
         </div>
-        <div class="bg-white border border-slate-200 rounded-lg p-4 text-center">
-          <p class="font-medium text-slate-700">Outdoor</p>
-          <p class="text-xs text-slate-500">Flood, Street</p>
+        <div>
+          <div class="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-industry text-blue-300 text-xl"></i>
+          </div>
+          <h4 class="font-bold text-white mb-1">Industrial Grade</h4>
+          <p class="text-purple-200 text-sm">Heavy-duty applications</p>
+        </div>
+        <div>
+          <div class="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-bolt text-yellow-300 text-xl"></i>
+          </div>
+          <h4 class="font-bold text-white mb-1">Energy Efficient</h4>
+          <p class="text-purple-200 text-sm">Reduce power costs</p>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Contact -->
+  <!-- Contact CTA -->
   <div class="bg-slate-800 py-12">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
         <div>
-          <h2 class="text-xl font-semibold text-white mb-2">Interested in Prisled?</h2>
-          <p class="text-slate-400">Contact us for pricing and availability.</p>
+          <h2 class="text-xl font-semibold text-white mb-2">Need Prisled for Your Project?</h2>
+          <p class="text-slate-400">Contact us for pricing, availability, and technical consultation.</p>
         </div>
         <div class="flex gap-3">
-          <a href="/#contact" class="px-5 py-2.5 bg-purple-600 text-white font-medium rounded hover:bg-purple-700 transition">
-            Request Quote
+          <a href="https://wa.me/6282298683313" target="_blank" class="px-5 py-2.5 bg-green-600 text-white font-medium rounded hover:bg-green-700 transition">
+            <i class="fab fa-whatsapp mr-2"></i>WhatsApp
           </a>
           <a href="tel:+6282298683313" class="px-5 py-2.5 border border-slate-600 text-slate-300 font-medium rounded hover:border-slate-500 hover:text-white transition">
-            Call Us
+            <i class="fas fa-phone mr-2"></i>Call Us
           </a>
         </div>
       </div>
@@ -154,12 +386,9 @@ const productCategories = [
 
   <!-- Navigation -->
   <div class="bg-white py-6 border-t border-slate-200">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex justify-between items-center">
-      <a href="/brands/histar" class="text-sm text-slate-600 hover:text-slate-800 transition">
-        ← HiSTAR
-      </a>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex justify-center">
       <a href="/brands" class="text-sm text-slate-600 hover:text-slate-800 transition">
-        All Brands →
+        ← Back to Brands
       </a>
     </div>
   </div>

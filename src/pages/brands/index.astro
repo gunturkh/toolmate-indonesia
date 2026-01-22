@@ -3,20 +3,6 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 
 const brands = [
   {
-    name: 'Megaman',
-    slug: 'megaman',
-    logo: '/images/logo/megaman.jpeg',
-    tagline: 'German LED Brand since 1994',
-    description: '31+ years of lighting excellence. Present in 52+ countries with premium LED solutions.',
-  },
-  {
-    name: 'HiSTAR',
-    slug: 'histar',
-    logo: '/images/logo/histar.jpeg',
-    tagline: 'Future Always Bright',
-    description: 'SNI certified LED products by PT. Fullmoon Jaya Abadi. Quality at affordable prices.',
-  },
-  {
     name: 'Prisled',
     slug: 'prisled',
     logo: '/images/logo/prisled.png',
@@ -28,8 +14,8 @@ const brands = [
 
 <BaseLayout
   title="LED Lighting Brands"
-  description="Official distributor for Megaman, HiSTAR, and Prisled LED lighting brands in Batam. Premium LED bulbs, downlights, panels, floodlights and industrial lighting."
-  keywords={['LED lighting Batam', 'Megaman Indonesia', 'HiSTAR LED', 'Prisled', 'lighting distributor']}
+  description="Official distributor for Prisled LED lighting brand in Batam. Premium LED bulbs, downlights, panels, floodlights and industrial lighting."
+  keywords={['LED lighting Batam', 'Prisled', 'lighting distributor', 'LED bulbs', 'industrial lighting']}
   activePage="brands"
   flexLayout={true}
 >
@@ -41,29 +27,31 @@ const brands = [
     </div>
   </div>
 
-  <!-- Brands -->
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
-    <div class="grid md:grid-cols-3 gap-6">
-      {brands.map((brand) => (
-        <a href={`/brands/${brand.slug}`} class="group block">
-          <div class="bg-white border border-slate-200 rounded-lg p-6 h-full hover:border-slate-300 hover:shadow-sm transition">
-            <div class="h-20 flex items-center justify-center mb-6">
-              <img
-                src={brand.logo}
-                alt={brand.name}
-                class="max-h-full max-w-full object-contain"
-              />
-            </div>
-            <h2 class="text-lg font-semibold text-slate-800 mb-1">{brand.name}</h2>
-            <p class="text-sm text-slate-500 mb-3">{brand.tagline}</p>
-            <p class="text-sm text-slate-600 mb-4">{brand.description}</p>
-            <span class="text-sm text-slate-500 group-hover:text-slate-700 transition">
-              View products →
+  <!-- Featured Brand -->
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-12">
+    <a href="/brands/prisled" class="group block">
+      <div class="bg-white border border-slate-200 rounded-xl p-8 md:p-12 hover:border-brand-navy hover:shadow-lg transition">
+        <div class="flex flex-col md:flex-row items-center gap-8">
+          <div class="w-full md:w-1/3 flex justify-center">
+            <img
+              src="/images/logo/prisled.png"
+              alt="Prisled"
+              class="h-24 md:h-32 object-contain"
+              loading="eager"
+            />
+          </div>
+          <div class="w-full md:w-2/3 text-center md:text-left">
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-800 mb-2">Prisled</h2>
+            <p class="text-brand-gold font-semibold mb-4">Commercial & Industrial LED</p>
+            <p class="text-slate-600 mb-6">Modern LED lighting solutions for offices, retail spaces, warehouses, and outdoor applications. Premium quality with competitive pricing for all your lighting needs.</p>
+            <span class="inline-flex items-center text-brand-navy font-semibold group-hover:underline transition">
+              View products & catalog
+              <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition"></i>
             </span>
           </div>
-        </a>
-      ))}
-    </div>
+        </div>
+      </div>
+    </a>
   </div>
 
   <!-- Why Us -->

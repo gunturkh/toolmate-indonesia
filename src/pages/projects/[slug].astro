@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
@@ -11,6 +12,32 @@ export async function getStaticPaths() {
 }
 
 const { project } = Astro.props;
+
+// Get all project images from the public folder
+const allImages = import.meta.glob('/public/images/projects/*.*', { eager: true });
+
+// Extract base name from the project image (e.g., "/images/projects/menara-aria-stp-1.png" -> "menara-aria-stp")
+const imagePath = project.image;
+const imageFileName = imagePath.split('/').pop() || '';
+const imageBaseName = imageFileName.replace(/-\d+\.(png|jpg|jpeg|JPG|PNG)$/i, '');
+
+// Find all images that match the base name pattern
+const projectImages: string[] = [];
+Object.keys(allImages).forEach((path) => {
+  const fileName = path.split('/').pop() || '';
+  const baseName = fileName.replace(/-\d+\.(png|jpg|jpeg|JPG|PNG)$/i, '');
+  if (baseName === imageBaseName) {
+    // Convert from /public/images/... to /images/...
+    projectImages.push(path.replace('/public', ''));
+  }
+});
+
+// Sort images by number suffix
+projectImages.sort((a, b) => {
+  const numA = parseInt(a.match(/-(\d+)\./)?.[1] || '0');
+  const numB = parseInt(b.match(/-(\d+)\./)?.[1] || '0');
+  return numA - numB;
+});
 
 // Get other projects for the related section
 const allProjects = await getCollection('projects');
@@ -25,14 +52,21 @@ const otherProjects = allProjects
   <!-- HERO -->
   <div class="bg-slate-900 pt-32 pb-16 relative overflow-hidden">
     <div class="absolute inset-0 opacity-30">
-      <img src={project.image} alt={project.title} class="w-full h-full object-cover">
+      <img
+        src={project.image}
+        alt=""
+        class="w-full h-full object-cover object-center"
+        loading="eager"
+        decoding="async"
+        aria-hidden="true"
+      >
     </div>
     <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/95 to-slate-900/80"></div>
     <div class="max-w-7xl mx-auto px-4 relative z-10">
       <a href="/projects" class="inline-flex items-center text-slate-400 hover:text-white mb-6 transition">
         <i class="fas fa-arrow-left mr-2"></i> Back to Projects
       </a>
-      <div class={`inline-block ${project.badgeColor} text-white text-xs font-bold px-3 py-1 rounded mb-4`}>
+      <div class="inline-block bg-slate-700 text-white text-xs font-bold px-3 py-1 rounded mb-4">
         {project.badge}
       </div>
       <h1 class="text-4xl md:text-5xl font-bold text-white mb-2">{project.title}</h1>
@@ -45,7 +79,47 @@ const otherProjects = allProjects
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
       <!-- Main Content -->
       <div class="lg:col-span-2">
-        <img src={project.image} alt={project.title} class="w-full h-80 object-cover rounded-lg shadow-xl mb-8">
+        <div class="bg-slate-100 rounded-lg shadow-xl mb-4 flex items-center justify-center overflow-hidden" style="min-height: 300px; max-height: 500px;">
+          <img
+            id="main-project-image"
+            src={project.image}
+            alt={project.title}
+            width="800"
+            height="600"
+            class="max-w-full max-h-[500px] w-auto h-auto object-contain cursor-pointer hover:opacity-90 transition"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+            onclick="openLightbox(this.src)"
+          >
+        </div>
+
+        {/* Gallery thumbnails if more than 1 image */}
+        {projectImages.length > 1 && (
+          <div class="mb-8">
+            <div class="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 gap-2">
+              {projectImages.map((img, index) => (
+                <button
+                  class={`aspect-[4/3] bg-slate-200 rounded-lg overflow-hidden border-2 transition hover:opacity-80 ${img === project.image ? 'border-brand-gold' : 'border-transparent'}`}
+                  onclick={`document.getElementById('main-project-image').src = '${img}'; document.querySelectorAll('.gallery-thumb').forEach(el => el.classList.remove('border-brand-gold')); document.querySelectorAll('.gallery-thumb').forEach(el => el.classList.add('border-transparent')); this.classList.remove('border-transparent'); this.classList.add('border-brand-gold');`}
+                >
+                  <img
+                    src={img}
+                    alt={`${project.title} - Image ${index + 1}`}
+                    width="150"
+                    height="113"
+                    class="gallery-thumb w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </button>
+              ))}
+            </div>
+            <p class="text-sm text-slate-500 mt-2">
+              <i class="fas fa-images mr-1"></i> {projectImages.length} photos - Click to view
+            </p>
+          </div>
+        )}
 
         <h2 class="text-2xl font-bold text-brand-navy mb-4">Project Overview</h2>
         <p class="text-slate-600 leading-relaxed mb-8">{project.fullDescription}</p>
@@ -76,12 +150,8 @@ const otherProjects = allProjects
               <p class="font-semibold text-slate-700">{project.location}</p>
             </div>
             <div>
-              <p class="text-xs text-slate-500 uppercase tracking-wide mb-1">Year</p>
-              <p class="font-semibold text-slate-700">{project.year}</p>
-            </div>
-            <div>
               <p class="text-xs text-slate-500 uppercase tracking-wide mb-1">Category</p>
-              <span class={`inline-block ${project.badgeColor} text-white text-xs font-bold px-3 py-1 rounded`}>
+              <span class="inline-block bg-slate-700 text-white text-xs font-bold px-3 py-1 rounded">
                 {project.badge}
               </span>
             </div>
@@ -106,8 +176,16 @@ const otherProjects = allProjects
         {otherProjects.map((p) => (
           <a href={`/projects/${p.slug}`} class="bg-white rounded-lg shadow-lg overflow-hidden border border-slate-100 hover:-translate-y-1 transition duration-300 block">
             <div class="h-48 bg-slate-200 relative">
-              <img src={p.image} alt={p.title} class="w-full h-full object-cover">
-              <div class={`absolute top-3 left-3 ${p.badgeColor} text-white text-xs font-bold px-2 py-1 rounded`}>
+              <img
+                src={p.image}
+                alt={p.title}
+                width="400"
+                height="300"
+                class="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
+              >
+              <div class="absolute top-3 left-3 bg-slate-700 text-white text-xs font-bold px-2 py-1 rounded">
                 {p.badge}
               </div>
             </div>
@@ -120,5 +198,102 @@ const otherProjects = allProjects
       </div>
     </div>
   </div>
+
+<!-- Lightbox Modal -->
+  <div
+    id="lightbox"
+    class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center p-4"
+    onclick="closeLightbox()"
+  >
+    <button
+      class="absolute top-4 right-4 text-white text-3xl hover:text-brand-gold transition"
+      onclick="closeLightbox()"
+    >
+      <i class="fas fa-times"></i>
+    </button>
+
+    {projectImages.length > 1 && (
+      <>
+        <button
+          id="prev-btn"
+          class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-4xl hover:text-brand-gold transition"
+          onclick="event.stopPropagation(); navigateLightbox(-1)"
+        >
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button
+          id="next-btn"
+          class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-4xl hover:text-brand-gold transition"
+          onclick="event.stopPropagation(); navigateLightbox(1)"
+        >
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </>
+    )}
+
+    <img
+      id="lightbox-image"
+      src=""
+      alt="Project image"
+      class="max-w-[90vw] max-h-[85vh] w-auto h-auto object-contain rounded-lg shadow-2xl"
+      decoding="async"
+      onclick="event.stopPropagation()"
+    >
+  </div>
+
+  <script define:vars={{ projectImages }}>
+    let currentImageIndex = 0;
+    const images = projectImages;
+
+    function openLightbox(src) {
+      currentImageIndex = images.indexOf(src);
+      if (currentImageIndex === -1) currentImageIndex = 0;
+      document.getElementById('lightbox-image').src = src;
+      document.getElementById('lightbox').classList.remove('hidden');
+      document.getElementById('lightbox').classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.add('hidden');
+      document.getElementById('lightbox').classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    function navigateLightbox(direction) {
+      currentImageIndex += direction;
+      if (currentImageIndex < 0) currentImageIndex = images.length - 1;
+      if (currentImageIndex >= images.length) currentImageIndex = 0;
+
+      const newSrc = images[currentImageIndex];
+      document.getElementById('lightbox-image').src = newSrc;
+      document.getElementById('main-project-image').src = newSrc;
+
+      // Update thumbnail border
+      document.querySelectorAll('.gallery-thumb').forEach((el, idx) => {
+        el.parentElement.classList.remove('border-brand-gold');
+        el.parentElement.classList.add('border-transparent');
+        if (idx === currentImageIndex) {
+          el.parentElement.classList.add('border-brand-gold');
+          el.parentElement.classList.remove('border-transparent');
+        }
+      });
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      const lightbox = document.getElementById('lightbox');
+      if (!lightbox.classList.contains('hidden')) {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') navigateLightbox(-1);
+        if (e.key === 'ArrowRight') navigateLightbox(1);
+      }
+    });
+
+    // Make functions globally available
+    window.openLightbox = openLightbox;
+    window.closeLightbox = closeLightbox;
+    window.navigateLightbox = navigateLightbox;
+  </script>
 
 </BaseLayout>

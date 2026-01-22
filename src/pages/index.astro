@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import ProjectCard from '@components/ProjectCard.astro';
 import DownloadCard from '@components/DownloadCard.astro';
@@ -102,30 +103,6 @@ const clients = [
   "PT. ELNUSA GEOSAINS"
 ];
 
-// LED Brands data
-const ledBrands = [
-  {
-    name: 'Megaman',
-    slug: 'megaman',
-    logo: '/images/logo/megaman.jpeg',
-    tagline: 'German LED Brand since 1994',
-    description: '31+ years of lighting excellence. Present in 52+ countries with premium LED solutions.',
-  },
-  {
-    name: 'HiSTAR',
-    slug: 'histar',
-    logo: '/images/logo/histar.jpeg',
-    tagline: 'Future Always Bright',
-    description: 'SNI certified LED products by PT. Fullmoon Jaya Abadi. Quality at affordable prices.',
-  },
-  {
-    name: 'Prisled',
-    slug: 'prisled',
-    logo: '/images/logo/prisled.png',
-    tagline: 'Commercial & Industrial LED',
-    description: 'Modern LED solutions for offices, retail, warehouses, and outdoor applications.',
-  }
-];
 
 // Downloads for the landing page - using centralized data
 const downloads = [
@@ -174,7 +151,7 @@ const downloads = [
   <!-- HERO SECTION -->
   <section id="home" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-slate-900">
     <div class="absolute inset-0 z-0 opacity-40">
-      <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Industrial Ducting" class="w-full h-full object-cover">
+      <Image src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Industrial Ducting" class="w-full h-full object-cover" width={1920} height={1080} loading="eager" />
     </div>
     <div class="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/90 to-transparent z-0"></div>
 
@@ -229,7 +206,7 @@ const downloads = [
         </div>
         <div class="relative">
           <div class="absolute -top-4 -right-4 w-full h-full border-2 border-brand-gold rounded-lg z-0"></div>
-          <img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Engineering Team" class="relative z-10 rounded-lg shadow-xl w-full">
+          <Image src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Engineering Team" class="relative z-10 rounded-lg shadow-xl w-full" width={1000} height={667} loading="lazy" />
         </div>
       </div>
 
@@ -277,7 +254,7 @@ const downloads = [
         <!-- HVAC -->
         <div class="flex flex-col md:flex-row gap-12 items-center">
           <div class="md:w-1/2">
-            <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=800&q=80" class="rounded-lg shadow-xl border-l-8 border-brand-gold" alt="HVAC">
+            <Image src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=800&q=80" class="rounded-lg shadow-xl border-l-8 border-brand-gold" alt="HVAC" width={800} height={533} loading="lazy" />
           </div>
           <div class="md:w-1/2">
             <div class="w-12 h-12 bg-blue-100 text-brand-navy rounded-lg flex items-center justify-center text-xl mb-4"><i class="fas fa-wind"></i></div>
@@ -295,7 +272,7 @@ const downloads = [
         <!-- WWTP -->
         <div class="flex flex-col md:flex-row-reverse gap-12 items-center">
           <div class="md:w-1/2">
-            <img src="https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?auto=format&fit=crop&w=800&q=80" class="rounded-lg shadow-xl border-r-8 border-green-500" alt="WWTP">
+            <Image src="https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?auto=format&fit=crop&w=800&q=80" class="rounded-lg shadow-xl border-r-8 border-green-500" alt="WWTP" width={800} height={533} loading="lazy" />
           </div>
           <div class="md:w-1/2">
             <div class="w-12 h-12 bg-green-100 text-green-600 rounded-lg flex items-center justify-center text-xl mb-4"><i class="fas fa-water"></i></div>
@@ -313,7 +290,7 @@ const downloads = [
         <!-- General Contractor -->
         <div class="flex flex-col md:flex-row gap-12 items-center">
           <div class="md:w-1/2">
-            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" class="rounded-lg shadow-xl border-l-8 border-brand-navy" alt="Construction">
+            <Image src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" class="rounded-lg shadow-xl border-l-8 border-brand-navy" alt="Construction" width={800} height={533} loading="lazy" />
           </div>
           <div class="md:w-1/2">
             <div class="w-12 h-12 bg-slate-100 text-slate-700 rounded-lg flex items-center justify-center text-xl mb-4"><i class="fas fa-tools"></i></div>
@@ -365,7 +342,7 @@ const downloads = [
         </div>
         <div class="lg:w-1/2">
           <div class="bg-white p-2 rounded-lg shadow-2xl rotate-2 hover:rotate-0 transition duration-500">
-            <img src="https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Water Treatment Science" class="rounded w-full h-64 object-cover mb-2">
+            <Image src="https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Water Treatment Science" class="rounded w-full h-64 object-cover mb-2" width={800} height={533} loading="lazy" />
             <div class="bg-green-50 p-6 rounded">
               <h3 class="text-green-800 font-bold text-xl mb-2">Major Effects</h3>
               <div class="grid grid-cols-2 gap-4 text-sm text-green-900">
@@ -414,8 +391,8 @@ const downloads = [
           {provenResults.map((result) => (
             <div class="bg-white p-4 shadow rounded border border-slate-100 text-slate-700">
               <div class="flex gap-2 mb-4">
-                <img src={result.beforeImg} class="w-1/2 h-40 object-cover grayscale rounded" alt="Before">
-                <img src={result.afterImg} class="w-1/2 h-40 object-cover rounded" alt="After">
+                <Image src={result.beforeImg} class="w-1/2 h-40 object-cover grayscale rounded" alt="Before" width={400} height={160} loading="lazy" />
+                <Image src={result.afterImg} class="w-1/2 h-40 object-cover rounded" alt="After" width={400} height={160} loading="lazy" />
               </div>
               <h4 class="font-bold text-green-800">{result.title}</h4>
               <p class="text-sm text-slate-600">{result.description}</p>
@@ -442,32 +419,34 @@ const downloads = [
         <p class="text-slate-500 mt-2">Premium LED lighting solutions for residential, commercial, and industrial applications.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {ledBrands.map((brand) => (
-          <a href={`/brands/${brand.slug}`} class="group block">
-            <div class="bg-white border border-slate-200 rounded-xl p-8 h-full hover:border-brand-navy hover:shadow-lg transition">
-              <div class="h-20 flex items-center justify-center mb-6">
-                <img
-                  src={brand.logo}
-                  alt={brand.name}
-                  class="max-h-full max-w-full object-contain"
-                />
+      <!-- Featured Brand - Prisled -->
+      <div class="max-w-4xl mx-auto">
+        <a href="/brands/prisled" class="group block">
+          <div class="bg-gradient-to-br from-slate-50 to-white border border-slate-200 rounded-2xl p-8 md:p-12 hover:border-brand-navy hover:shadow-xl transition">
+            <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+              <div class="w-full md:w-1/3 flex justify-center">
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                  <img
+                    src="/images/logo/prisled.png"
+                    alt="Prisled"
+                    class="h-20 md:h-24 object-contain"
+                  />
+                </div>
               </div>
-              <h4 class="text-xl font-bold text-slate-800 mb-1">{brand.name}</h4>
-              <p class="text-sm text-brand-gold font-medium mb-3">{brand.tagline}</p>
-              <p class="text-sm text-slate-600 mb-4">{brand.description}</p>
-              <span class="text-sm text-brand-navy font-semibold group-hover:underline transition">
-                View products →
-              </span>
+              <div class="w-full md:w-2/3 text-center md:text-left">
+                <div class="inline-block px-3 py-1 bg-brand-gold/10 text-brand-gold text-xs font-bold uppercase tracking-wide rounded-full mb-4">
+                  Official Distributor
+                </div>
+                <h4 class="text-2xl md:text-3xl font-bold text-slate-800 mb-2">Prisled</h4>
+                <p class="text-brand-gold font-semibold mb-4">Commercial & Industrial LED Solutions</p>
+                <p class="text-slate-600 mb-6">Modern LED lighting for offices, retail spaces, warehouses, and outdoor applications. Wide range of products including bulbs, downlights, panels, and floodlights.</p>
+                <span class="inline-flex items-center px-6 py-3 bg-brand-navy text-white font-semibold rounded-lg group-hover:bg-blue-900 transition">
+                  View Products & Catalog
+                  <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition"></i>
+                </span>
+              </div>
             </div>
-          </a>
-        ))}
-      </div>
-
-      <div class="text-center mt-12">
-        <a href="/brands" class="inline-flex items-center px-8 py-4 text-base font-bold text-white bg-brand-navy hover:bg-blue-900 rounded shadow-lg transition">
-          View All LED Brands
-          <i class="fas fa-arrow-right ml-2"></i>
+          </div>
         </a>
       </div>
     </div>
@@ -565,7 +544,7 @@ const downloads = [
               </div>
               <div class="ml-4">
                 <h4 class="font-bold">Phone / WhatsApp</h4>
-                <p class="text-blue-200 text-sm">+62 811-1112-8383 (Louis Loi)</p>
+                <p class="text-blue-200 text-sm">+62 822-9868-3313</p>
               </div>
             </div>
 

@@ -10,13 +10,14 @@ const { activePage = 'home' } = Astro.props;
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between h-24 items-center">
       <!-- Logo -->
-      <a href="/" class="flex items-center gap-2">
-        <div class="relative">
-          <div class="text-4xl font-extrabold tracking-tighter text-brand-navy italic" style="font-family: sans-serif;">TTI</div>
-          <div class="absolute -top-2 -right-2 w-8 h-8 border-t-4 border-r-4 border-brand-navy rounded-tr-full"></div>
-          <div class="absolute -bottom-1 -left-1 w-12 h-2 bg-brand-gold rounded-full transform -skew-x-12"></div>
-        </div>
-        <div class="hidden md:flex flex-col ml-3">
+      <a href="/" class="flex items-center gap-3">
+        <img
+          src="/images/logo.png"
+          alt="TTI Logo"
+          class="h-14 w-auto"
+          loading="eager"
+        />
+        <div class="hidden md:flex flex-col">
           <span class="font-bold text-sm text-brand-navy uppercase tracking-wide leading-tight">PT Toolmate Technologies</span>
           <span class="font-bold text-xs text-brand-gold uppercase tracking-wide leading-tight">Indonesia</span>
         </div>

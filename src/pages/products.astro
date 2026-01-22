@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import { downloads } from '@data/downloads';
 import { pageSEO } from '@data/seo';
@@ -97,7 +98,7 @@ const applications = [
         </ul>
       </div>
       <div>
-        <img src="https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?auto=format&fit=crop&w=800&q=80" class="rounded-lg shadow-xl mb-6" alt="Biology Genesis">
+        <Image src="https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?auto=format&fit=crop&w=800&q=80" class="rounded-lg shadow-xl mb-6" alt="Biology Genesis" width={800} height={533} loading="eager" />
         <div class="bg-green-50 p-4 rounded-lg border border-green-100 mb-6">
           <h4 class="font-bold text-green-800 mb-3">Wide Range of Application:</h4>
           <div class="grid grid-cols-2 gap-2 text-sm text-green-700">
@@ -153,11 +154,11 @@ const applications = [
             <div class="flex gap-2 mb-4">
               <div class="w-1/2">
                 <p class="text-xs text-slate-500 mb-1 text-center">Before</p>
-                <img src={result.beforeImg} class="w-full h-32 object-cover grayscale rounded" alt="Before">
+                <Image src={result.beforeImg} class="w-full h-32 object-cover grayscale rounded" alt="Before" width={400} height={128} loading="lazy" />
               </div>
               <div class="w-1/2">
                 <p class="text-xs text-slate-500 mb-1 text-center">After</p>
-                <img src={result.afterImg} class="w-full h-32 object-cover rounded" alt="After">
+                <Image src={result.afterImg} class="w-full h-32 object-cover rounded" alt="After" width={400} height={128} loading="lazy" />
               </div>
             </div>
             <h3 class="font-bold text-green-800">{result.title}</h3>

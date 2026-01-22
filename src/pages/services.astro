@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import DownloadCard from '@components/DownloadCard.astro';
 import { downloads } from '@data/downloads';
@@ -71,7 +72,7 @@ const serviceDownloads = [
     {serviceDetails.map((service) => (
       <div class={`flex flex-col ${service.reverse ? 'md:flex-row-reverse' : 'md:flex-row'} gap-12 items-center`}>
         <div class="md:w-1/2">
-          <img src={service.image} class={`rounded-lg shadow-xl ${service.borderClass}`} alt={service.title}>
+          <Image src={service.image} class={`rounded-lg shadow-xl ${service.borderClass}`} alt={service.title} width={800} height={533} loading="lazy" />
         </div>
         <div class="md:w-1/2">
           <div class={`w-12 h-12 ${service.iconBg} ${service.iconColor} rounded-lg flex items-center justify-center text-xl mb-4`}>

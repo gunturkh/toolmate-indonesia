@@ -22,7 +22,7 @@ export const siteConfig = {
   locale: 'id_ID',
   defaultImage: '/images/og-default.jpg', // Create this image (1200x630px recommended)
   twitterHandle: '@toolmateid', // Update if you have Twitter
-  phone: '+62 811-1112-8383',
+  phone: '+62 822-9868-3313',
   email: 'toolmate.pttti@gmail.com',
   address: {
     street: 'Jl. Nagoya Hill Blok R3 No 6-7, Lubuk Baja Kota, Kec. Lubuk Baja',
@@ -119,11 +119,9 @@ export const pageSEO: Record<string, SEOData> = {
   brands: {
     title: 'LED Lighting Brands - Official Distributor',
     description:
-      'Official distributor for Megaman, HiSTAR, and Prisled LED lighting brands in Batam. Premium LED bulbs, downlights, panels, floodlights and industrial lighting solutions.',
+      'Official distributor for Prisled LED lighting brand in Batam. Premium LED bulbs, downlights, panels, floodlights and industrial lighting solutions.',
     keywords: [
       'LED lighting Batam',
-      'Megaman Indonesia',
-      'HiSTAR LED',
       'Prisled distributor',
       'LED bulbs Batam',
       'industrial lighting',
@@ -131,38 +129,6 @@ export const pageSEO: Record<string, SEOData> = {
       'LED panel',
       'LED floodlight',
     ],
-  },
-
-  megaman: {
-    title: 'Megaman LED Lighting - German Quality',
-    description:
-      'Megaman LED lighting products - German brand since 1994. Premium LED bulbs, downlights, panels, floodlights and more. Official distributor in Batam, Indonesia.',
-    keywords: [
-      'Megaman LED',
-      'Megaman Indonesia',
-      'German LED brand',
-      'LED bulbs Batam',
-      'Megaman downlight',
-      'LED panel',
-      'industrial lighting',
-    ],
-    type: 'product',
-  },
-
-  histar: {
-    title: 'HiSTAR LED Lighting - Future Always Bright',
-    description:
-      'HiSTAR LED lighting products by PT. Fullmoon Jaya Abadi. SNI certified LED bulbs, downlights, floodlights, solar street lights. Official distributor in Batam.',
-    keywords: [
-      'HiSTAR LED',
-      'HiSTAR Indonesia',
-      'SNI LED bulbs',
-      'LED lighting Batam',
-      'solar street light',
-      'LED floodlight',
-      'affordable LED',
-    ],
-    type: 'product',
   },
 
   prisled: {

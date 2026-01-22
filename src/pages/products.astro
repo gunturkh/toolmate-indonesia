@@ -25,20 +25,20 @@ const dosageData = [
 
 const provenResults = [
   {
-    beforeImg: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=400&q=80",
-    afterImg: "https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?auto=format&fit=crop&w=400&q=80",
+    beforeImg: "/images/products/biology-genesis/mcdonalds-grease-trap-before.png",
+    afterImg: "/images/products/biology-genesis/mcdonalds-grease-trap-after.png",
     title: "McDonald's Grease Trap (Restaurant Industry)",
     description: "Application on 4 grease trap tanks with 8m³ total capacity. No skimming during trial. Reduced oil/grease and destroyed clumped sludge within 5 days treatment (50 gram/day dosage)."
   },
   {
-    beforeImg: "https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&w=400&q=80",
-    afterImg: "https://images.unsplash.com/photo-1468421870903-4df1664ac249?auto=format&fit=crop&w=400&q=80",
+    beforeImg: "/images/products/biology-genesis/sosro-wwtp-before.png",
+    afterImg: "/images/products/biology-genesis/sosro-wwtp-after.png",
     title: "Teh Botol Sosro (Tea Factory WWTP)",
     description: "Significant COD, BOD, TSS and sludge volume reduction. Water color changed from black to brownish within 16 days of treatment."
   },
   {
-    beforeImg: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=400&q=80",
-    afterImg: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=400&q=80",
+    beforeImg: "/images/products/biology-genesis/mayora-lab-samples.png",
+    afterImg: "/images/products/biology-genesis/treatment-process-diagram.png",
     title: "Mayora (Food Factory WWTP)",
     description: "50% sludge reduction before and after treatment. Odor almost eliminated. Water changed from black to brownish. Chemical usage (coagulant & flocculant) reduced by up to 30%."
   }
@@ -154,11 +154,21 @@ const applications = [
             <div class="flex gap-2 mb-4">
               <div class="w-1/2">
                 <p class="text-xs text-slate-500 mb-1 text-center">Before</p>
-                <Image src={result.beforeImg} class="w-full h-32 object-cover grayscale rounded" alt="Before" width={400} height={128} loading="lazy" />
+                <div class="relative group cursor-pointer" data-lightbox-img={result.beforeImg} data-lightbox-title={`${result.title} - Before`}>
+                  <img src={result.beforeImg} class="w-full h-32 object-cover grayscale rounded transition-transform group-hover:scale-105" alt="Before" loading="lazy" decoding="async" />
+                  <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors rounded flex items-center justify-center">
+                    <i class="fas fa-search-plus text-white opacity-0 group-hover:opacity-100 transition-opacity text-lg"></i>
+                  </div>
+                </div>
               </div>
               <div class="w-1/2">
                 <p class="text-xs text-slate-500 mb-1 text-center">After</p>
-                <Image src={result.afterImg} class="w-full h-32 object-cover rounded" alt="After" width={400} height={128} loading="lazy" />
+                <div class="relative group cursor-pointer" data-lightbox-img={result.afterImg} data-lightbox-title={`${result.title} - After`}>
+                  <img src={result.afterImg} class="w-full h-32 object-cover rounded transition-transform group-hover:scale-105" alt="After" loading="lazy" decoding="async" />
+                  <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors rounded flex items-center justify-center">
+                    <i class="fas fa-search-plus text-white opacity-0 group-hover:opacity-100 transition-opacity text-lg"></i>
+                  </div>
+                </div>
               </div>
             </div>
             <h3 class="font-bold text-green-800">{result.title}</h3>
@@ -226,5 +236,77 @@ const applications = [
       </div>
     </div>
   </div>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center p-4">
+    <button id="lightbox-close" class="absolute top-4 right-4 text-white/80 hover:text-white transition z-10">
+      <i class="fas fa-times text-3xl"></i>
+    </button>
+    <button id="lightbox-prev" class="absolute left-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white transition">
+      <i class="fas fa-chevron-left text-3xl"></i>
+    </button>
+    <button id="lightbox-next" class="absolute right-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white transition">
+      <i class="fas fa-chevron-right text-3xl"></i>
+    </button>
+    <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[85vh] object-contain" />
+    <div class="absolute bottom-4 left-0 right-0 text-center">
+      <p id="lightbox-title" class="text-white font-bold text-lg"></p>
+    </div>
+  </div>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
+    const lightboxTitle = document.getElementById('lightbox-title');
+    const lightboxClose = document.getElementById('lightbox-close');
+    const lightboxPrev = document.getElementById('lightbox-prev');
+    const lightboxNext = document.getElementById('lightbox-next');
+
+    const images = document.querySelectorAll('[data-lightbox-img]');
+    let currentIndex = 0;
+
+    const imageData = Array.from(images).map((el) => ({
+      src: el.getAttribute('data-lightbox-img'),
+      title: el.getAttribute('data-lightbox-title') || ''
+    }));
+
+    function showImage(index: number) {
+      if (index < 0) index = imageData.length - 1;
+      if (index >= imageData.length) index = 0;
+      currentIndex = index;
+
+      const data = imageData[currentIndex];
+      if (lightboxImg && data.src) lightboxImg.src = data.src;
+      if (lightboxTitle) lightboxTitle.textContent = data.title;
+    }
+
+    images.forEach((el, index) => {
+      el.addEventListener('click', () => {
+        showImage(index);
+        if (lightbox) lightbox.classList.remove('hidden');
+        if (lightbox) lightbox.classList.add('flex');
+      });
+    });
+
+    function closeLightbox() {
+      if (lightbox) lightbox.classList.add('hidden');
+      if (lightbox) lightbox.classList.remove('flex');
+    }
+
+    lightboxClose?.addEventListener('click', closeLightbox);
+    lightboxPrev?.addEventListener('click', () => showImage(currentIndex - 1));
+    lightboxNext?.addEventListener('click', () => showImage(currentIndex + 1));
+
+    lightbox?.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (lightbox?.classList.contains('hidden')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+      if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+    });
+  </script>
 
 </BaseLayout>

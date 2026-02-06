@@ -8,39 +8,46 @@ const { activePage = 'home' } = Astro.props;
 
 <nav class="fixed w-full z-50 bg-white/95 backdrop-blur shadow-md border-b border-slate-100">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between h-24 items-center">
+    <div class="flex justify-between h-16 items-center">
       <!-- Logo -->
-      <a href="/" class="flex items-center gap-3">
-        <img
-          src="/images/logo.png"
-          alt="TTI Logo"
-          class="h-14 w-auto"
-          loading="eager"
-        />
-        <div class="hidden md:flex flex-col">
-          <span class="font-bold text-sm text-brand-navy uppercase tracking-wide leading-tight">PT Toolmate Technologies</span>
-          <span class="font-bold text-xs text-brand-gold uppercase tracking-wide leading-tight">Indonesia</span>
+      <a href="/" class="flex items-center gap-4">
+        <!-- TTI -->
+        <div class="flex items-center gap-2">
+          <img src="/images/logo.png" alt="TTI Logo" class="h-8 md:h-10 w-auto" loading="eager" />
+          <div class="hidden lg:flex flex-col">
+            <span class="font-bold text-xs text-brand-navy uppercase tracking-wide leading-tight">PT Toolmate Technologies</span>
+            <span class="font-bold text-[10px] text-brand-gold uppercase tracking-wide leading-tight">Indonesia</span>
+          </div>
+        </div>
+        <div class="hidden md:block w-px h-8 bg-slate-300"></div>
+        <!-- TEI -->
+        <div class="flex items-center gap-2">
+          <img src="/images/logo/TEI logo.png" alt="TEI Logo" class="h-8 md:h-10 w-auto" loading="eager" />
+          <div class="hidden lg:flex flex-col">
+            <span class="font-bold text-xs text-brand-navy uppercase tracking-wide leading-tight">PT Toolmate Enviro</span>
+            <span class="font-bold text-[10px] text-brand-gold uppercase tracking-wide leading-tight">Indonesia</span>
+          </div>
         </div>
       </a>
 
       <!-- Desktop Menu -->
-      <div class="hidden md:flex space-x-8 items-center">
-        <a href="/" class:list={["text-sm font-semibold hover:text-brand-navy transition", activePage === 'home' ? "text-brand-navy border-b-2 border-brand-gold" : "text-slate-600"]}>
+      <div class="hidden md:flex space-x-4 lg:space-x-6 items-center">
+        <a href="/" class:list={["text-xs lg:text-sm font-semibold hover:text-brand-navy transition", activePage === 'home' ? "text-brand-navy border-b-2 border-brand-gold" : "text-slate-600"]}>
           Home
         </a>
-        <a href="/services" class:list={["text-sm font-semibold hover:text-brand-navy transition", activePage === 'services' ? "text-brand-navy border-b-2 border-brand-gold" : "text-slate-600"]}>
-          Engineering Services
+        <a href="/services" class:list={["text-xs lg:text-sm font-semibold hover:text-brand-navy transition", activePage === 'services' ? "text-brand-navy border-b-2 border-brand-gold" : "text-slate-600"]}>
+          Services
         </a>
-        <a href="/products" class:list={["text-sm font-semibold hover:text-green-700 transition", activePage === 'products' ? "font-bold text-green-600 border-b-2 border-green-500" : "text-green-600"]}>
-          <i class="fas fa-leaf mr-1"></i> Bio Tech
+        <a href="/products" class:list={["text-xs lg:text-sm font-semibold hover:text-green-700 transition flex items-center gap-1", activePage === 'products' ? "font-bold text-green-600 border-b-2 border-green-500" : "text-green-600"]}>
+          <img src="/images/logo/Biology Genesis Logo.png" alt="Biology Genesis Logo" class="h-4 w-auto" /> Biology Genesis
         </a>
-        <a href="/brands" class:list={["text-sm font-semibold hover:text-yellow-600 transition", activePage === 'brands' ? "font-bold text-yellow-600 border-b-2 border-yellow-500" : "text-yellow-600"]}>
+        <a href="/brands" class:list={["text-xs lg:text-sm font-semibold hover:text-yellow-600 transition", activePage === 'brands' ? "font-bold text-yellow-600 border-b-2 border-yellow-500" : "text-yellow-600"]}>
           <i class="fas fa-lightbulb mr-1"></i> LED Brands
         </a>
-        <a href="/projects" class:list={["text-sm font-semibold hover:text-brand-navy transition", activePage === 'projects' ? "text-brand-navy border-b-2 border-brand-gold" : "text-slate-600"]}>
+        <a href="/projects" class:list={["text-xs lg:text-sm font-semibold hover:text-brand-navy transition", activePage === 'projects' ? "text-brand-navy border-b-2 border-brand-gold" : "text-slate-600"]}>
           Projects
         </a>
-        <a href="/#contact" class="px-5 py-2.5 text-sm font-bold text-white bg-brand-navy hover:bg-blue-900 rounded shadow-lg transition">
+        <a href="/#contact" class="px-4 py-2 text-xs lg:text-sm font-bold text-white bg-brand-navy hover:bg-blue-900 rounded shadow-lg transition">
           Contact Us
         </a>
       </div>
@@ -59,7 +66,7 @@ const { activePage = 'home' } = Astro.props;
     <div class="px-4 pt-2 pb-6 space-y-1">
       <a href="/" class="block px-3 py-3 text-base font-medium text-slate-700 border-b border-slate-100">Home</a>
       <a href="/services" class="block px-3 py-3 text-base font-medium text-slate-700 border-b border-slate-100">Services</a>
-      <a href="/products" class="block px-3 py-3 text-base font-medium text-green-600 border-b border-slate-100"><i class="fas fa-leaf mr-1"></i> Bio Tech</a>
+      <a href="/products" class="flex items-center gap-2 px-3 py-3 text-base font-medium text-green-600 border-b border-slate-100"><img src="/images/logo/Biology Genesis Logo.png" alt="Biology Genesis Logo" class="h-5 w-auto" /> Biology Genesis</a>
       <a href="/brands" class="block px-3 py-3 text-base font-medium text-yellow-600 border-b border-slate-100"><i class="fas fa-lightbulb mr-1"></i> LED Brands</a>
       <a href="/projects" class="block px-3 py-3 text-base font-medium text-slate-700 border-b border-slate-100">Projects</a>
       <a href="/#contact" class="block mt-4 px-3 py-3 text-center text-base font-bold text-white bg-brand-navy rounded-md">Contact Us</a>

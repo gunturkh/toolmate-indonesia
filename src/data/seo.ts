@@ -88,7 +88,7 @@ export const pageSEO: Record<string, SEOData> = {
   products: {
     title: 'Biology Genesis - Natural Wastewater Treatment',
     description:
-      'Biology Genesis by Naturelabs Biotech - Natural bio-technology solution for industrial waste water treatment. Safe, non-toxic bacterial culture for WWTP, STP, and grease traps.',
+      'Biology Genesis - Natural bio-technology solution for industrial waste water treatment. Safe, non-toxic bacterial culture for WWTP, STP, and grease traps.',
     keywords: [
       'Biology Genesis',
       'bio wastewater treatment',
@@ -97,7 +97,7 @@ export const pageSEO: Record<string, SEOData> = {
       'grease trap treatment',
       'STP bacteria',
       'POME treatment',
-      'Naturelabs Biotech',
+      'Biology Genesis',
     ],
     type: 'product',
   },

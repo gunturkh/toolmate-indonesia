@@ -1,7 +1,7 @@
 {
   "slug": "nirmala-laundry-stp",
   "image": "/images/projects/nirmala-laundry-stp-1.png",
-  "badge": "WWTP",
+  "badge": "WTP",
   "badgeColor": "bg-green-600",
   "title": "PT. Nirmala Laundry",
   "subtitle": "STP Project (MBR System)",
@@ -17,5 +17,5 @@
   "client": "PT. Nirmala Laundry",
   "location": "Batam, Indonesia",
   "year": "2023",
-  "category": "wwtp"
+  "category": "wtp"
 }

@@ -20,7 +20,7 @@ export interface DownloadItem {
 }
 
 // Single company profile PDF containing all catalogues and information
-const COMPANY_PROFILE_URL = "https://drive.google.com/file/d/1rFpjxxCDFctdRLNtAKZQxvFp4PDmkw3t/view?usp=sharing";
+const COMPANY_PROFILE_URL = "https://drive.google.com/file/d/148P1xFtj8nJMgbx5HdwZo2SNR5jF2YS2/view?usp=sharing";
 
 export const downloads = {
   // Company Profile - main document containing all information
@@ -70,9 +70,9 @@ export const downloads = {
     iconColor: "text-blue-500",
   },
 
-  wwtpCatalogue: {
-    id: "wwtp-catalogue",
-    title: "WWTP Solutions Catalogue",
+  wtpCatalogue: {
+    id: "wtp-catalogue",
+    title: "WTP Solutions Catalogue",
     subtitle: "PDF Document",
     url: COMPANY_PROFILE_URL,
     icon: "fa-file-pdf",

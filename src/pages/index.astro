@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import ProjectCard from '@components/ProjectCard.astro';
 import DownloadCard from '@components/DownloadCard.astro';
@@ -32,8 +31,8 @@ const services = [
     iconBg: "bg-green-50",
     iconColor: "text-green-600",
     borderColor: "border-green-500",
-    title: "Water Treatment (WWTP)",
-    description: "Design and expansion of WWTP, STP, and WTP. We utilize advanced systems like MBR (Membrane Bioreactor) and MBBR. Includes pipe installation and chemical supply."
+    title: "Waste Treatment Plant (WTP)",
+    description: "Design and expansion of WTP, STP, and water treatment systems. We utilize advanced systems like MBR (Membrane Bioreactor) and MBBR. Includes pipe installation and chemical supply."
   },
   {
     icon: "fa-hard-hat",
@@ -54,7 +53,7 @@ const benefits = [
 
 const dosageData = [
   { app: "Sewage Treatment (STP)", system: "Debit/Flow", standard: "0.5 ppm / day", initial: "5 ppm (Days 1-5)" },
-  { app: "Industrial Waste (WWTP)", system: "100 m³/day", standard: "1 ppm / day", initial: "10 ppm (Day 1)" },
+  { app: "Industrial Waste (WTP)", system: "100 m³/day", standard: "1 ppm / day", initial: "10 ppm (Day 1)" },
   { app: "Grease Trap", system: "5 m³/day", standard: "5 ppm / day", initial: "50 ppm (Day 1)" }
 ];
 
@@ -68,13 +67,13 @@ const provenResults = [
   {
     beforeImg: "/images/products/biology-genesis/sosro-wwtp-before.png",
     afterImg: "/images/products/biology-genesis/sosro-wwtp-after.png",
-    title: "Teh Botol Sosro (Tea Factory WWTP)",
+    title: "Teh Botol Sosro (Tea Factory WTP)",
     description: "Significant COD, BOD, TSS and sludge volume reduction. Water color changed from black to brownish within 16 days of treatment."
   },
   {
     beforeImg: "/images/products/biology-genesis/mayora-lab-samples.png",
     afterImg: "/images/products/biology-genesis/treatment-process-diagram.png",
-    title: "Mayora (Food Factory WWTP)",
+    title: "Mayora (Food Factory WTP)",
     description: "50% sludge reduction before and after treatment. Odor almost eliminated. Water changed from black to brownish. Chemical usage (coagulant & flocculant) reduced by up to 30%."
   }
 ];
@@ -150,7 +149,7 @@ const downloads = [
   <!-- HERO SECTION -->
   <section id="home" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-slate-900">
     <div class="absolute inset-0 z-0 opacity-40">
-      <Image src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Industrial Ducting" class="w-full h-full object-cover" width={1920} height={1080} loading="eager" />
+      <img src="/images/projects/wwtp-panbil-industrial-park-1.png" alt="Waste Treatment Plant" class="w-full h-full object-cover" loading="eager" />
     </div>
     <div class="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/90 to-transparent z-0"></div>
 
@@ -164,7 +163,7 @@ const downloads = [
           <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold to-yellow-200">Environmental Solutions.</span>
         </h1>
         <p class="text-lg text-slate-300 mb-8 leading-relaxed max-w-2xl">
-          Specializing in Waste Water Treatment (WWTP), MVAC Systems, and Industrial Fabrication. Serving Batam's manufacturing industries since 2016.
+          Specializing in Waste Treatment Plants (WTP), MVAC Systems, and Industrial Fabrication. Serving Batam's manufacturing industries since 2016.
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
           <a href="#projects" class="inline-flex justify-center items-center px-8 py-4 text-base font-bold text-brand-navy bg-white hover:bg-slate-100 rounded transition shadow-lg">
@@ -186,10 +185,10 @@ const downloads = [
           <h2 class="text-brand-gold font-bold uppercase tracking-widest text-sm mb-2">Who We Are</h2>
           <h3 class="text-3xl font-bold text-brand-navy mb-6">Professional Industrial Partner</h3>
           <p class="text-slate-600 mb-4 leading-relaxed">
-            Established in 2016, <strong>PT Toolmate Technologies Indonesia</strong> has grown into a premier General Contractor and M&E Engineering firm in Batam. We are committed to customer satisfaction through legitimate business practices and continuous quality improvement.
+            <strong>PT Toolmate Enviro Indonesia (TEI)</strong>, established in 2023, is the expansion of <strong>PT Toolmate Technologies Indonesia (TTI)</strong> which has been operating since 2016. TEI was founded to broaden our scope into environmental engineering and waste treatment solutions, building on TTI's strong foundation as a premier General Contractor and M&E Engineering firm in Batam.
           </p>
           <p class="text-slate-600 mb-8 leading-relaxed">
-            Our mission is to serve customers with trustworthy business ethics and deliver value across every project, from clean room setups to complex water treatment facilities.
+            We are committed to customer satisfaction through legitimate business practices and continuous quality improvement. Our mission is to serve customers with trustworthy business ethics and deliver value across every project, from clean room setups to complex waste treatment facilities.
           </p>
 
           <div class="grid grid-cols-2 gap-6 border-t border-slate-100 pt-6">
@@ -205,13 +204,13 @@ const downloads = [
         </div>
         <div class="relative">
           <div class="absolute -top-4 -right-4 w-full h-full border-2 border-brand-gold rounded-lg z-0"></div>
-          <Image src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Engineering Team" class="relative z-10 rounded-lg shadow-xl w-full" width={1000} height={667} loading="lazy" />
+          <img src="/images/projects/wwtp-panbil-muka-kuning-1.png" alt="WTP Project Reference" class="relative z-10 rounded-lg shadow-xl w-full" loading="lazy" />
         </div>
       </div>
 
       <!-- Why Choose Us -->
       <div class="mt-20 pt-16 border-t border-slate-100">
-        <h3 class="text-2xl font-bold text-brand-navy text-center mb-12">Why PT Toolmate Technologies Indonesia?</h3>
+        <h3 class="text-2xl font-bold text-brand-navy text-center mb-12">Why PT Toolmate Enviro Indonesia?</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
           {whyChooseUs.map((item) => (
             <div class="text-center p-4">
@@ -253,7 +252,7 @@ const downloads = [
         <!-- HVAC -->
         <div class="flex flex-col md:flex-row gap-12 items-center">
           <div class="md:w-1/2">
-            <Image src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=800&q=80" class="rounded-lg shadow-xl border-l-8 border-brand-gold" alt="HVAC" width={800} height={533} loading="lazy" />
+            <img src="/images/projects/batam-teknik-hvac-1.png" class="rounded-lg shadow-xl border-l-8 border-brand-gold" alt="HVAC" loading="lazy" />
           </div>
           <div class="md:w-1/2">
             <div class="w-12 h-12 bg-blue-100 text-brand-navy rounded-lg flex items-center justify-center text-xl mb-4"><i class="fas fa-wind"></i></div>
@@ -268,15 +267,15 @@ const downloads = [
           </div>
         </div>
 
-        <!-- WWTP -->
+        <!-- WTP -->
         <div class="flex flex-col md:flex-row-reverse gap-12 items-center">
           <div class="md:w-1/2">
-            <Image src="https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?auto=format&fit=crop&w=800&q=80" class="rounded-lg shadow-xl border-r-8 border-green-500" alt="WWTP" width={800} height={533} loading="lazy" />
+            <img src="/images/projects/wwtp-panbil-muka-kuning-2.png" class="rounded-lg shadow-xl border-r-8 border-green-500" alt="WTP" loading="lazy" />
           </div>
           <div class="md:w-1/2">
             <div class="w-12 h-12 bg-green-100 text-green-600 rounded-lg flex items-center justify-center text-xl mb-4"><i class="fas fa-water"></i></div>
-            <h4 class="text-3xl font-bold text-brand-navy mb-4">Environmental Engineering (WWTP)</h4>
-            <p class="text-slate-600 mb-4">Specialists in Waste Water Treatment Plant design, expansion, and maintenance using advanced biological technologies.</p>
+            <h4 class="text-3xl font-bold text-brand-navy mb-4">Environmental Engineering (WTP)</h4>
+            <p class="text-slate-600 mb-4">Specialists in Waste Treatment Plant design, expansion, and maintenance using advanced biological technologies.</p>
             <ul class="space-y-2 text-sm text-slate-700">
               <li><i class="fas fa-check text-green-500 mr-2"></i> MBR (Membrane Bioreactor) Systems</li>
               <li><i class="fas fa-check text-green-500 mr-2"></i> MBBR (Moving Bed Biofilm Reactor)</li>
@@ -289,7 +288,7 @@ const downloads = [
         <!-- General Contractor -->
         <div class="flex flex-col md:flex-row gap-12 items-center">
           <div class="md:w-1/2">
-            <Image src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" class="rounded-lg shadow-xl border-l-8 border-brand-navy" alt="Construction" width={800} height={533} loading="lazy" />
+            <img src="/images/projects/caterpillar-epoxy-1.JPG" class="rounded-lg shadow-xl border-l-8 border-brand-navy" alt="Construction" loading="lazy" />
           </div>
           <div class="md:w-1/2">
             <div class="w-12 h-12 bg-slate-100 text-slate-700 rounded-lg flex items-center justify-center text-xl mb-4"><i class="fas fa-tools"></i></div>
@@ -323,7 +322,7 @@ const downloads = [
         <div class="lg:w-1/2">
           <div class="inline-block px-4 py-1 bg-green-700 rounded-full text-xs font-bold uppercase tracking-wider mb-4">Biology Genesis</div>
           <h2 class="text-4xl font-bold mb-6">Biology Genesis</h2>
-          <p class="text-green-100 text-lg mb-4">Natural Bio Technology Solution for Industrial Waste Water Treatment.</p>
+          <p class="text-green-100 text-lg mb-4">Natural Bio Technology Solution for Industrial Waste Treatment.</p>
           <p class="text-green-100 mb-8">Biology Genesis is a group of human-friendly and beneficial bacteria & yeast. It is a natural culture without harsh chemical mixtures. It is certified safe, non-toxic, and free of pathogenic bacteria.</p>
           <h3 class="font-bold text-lg mb-3 text-brand-gold">Major Benefits:</h3>
           <ul class="space-y-3 mb-8">
@@ -479,7 +478,7 @@ const downloads = [
       <!-- Filters -->
       <div id="home-filter-buttons" class="flex flex-wrap justify-center gap-4 mb-12">
         <button data-filter="all" class="home-filter-btn active px-4 py-2 bg-brand-navy text-white rounded-full text-sm font-bold transition hover:bg-blue-900">All Projects</button>
-        <button data-filter="wwtp" class="home-filter-btn px-4 py-2 bg-slate-100 text-slate-600 rounded-full text-sm font-semibold transition hover:bg-slate-200">WWTP</button>
+        <button data-filter="wtp" class="home-filter-btn px-4 py-2 bg-slate-100 text-slate-600 rounded-full text-sm font-semibold transition hover:bg-slate-200">WTP</button>
         <button data-filter="hvac" class="home-filter-btn px-4 py-2 bg-slate-100 text-slate-600 rounded-full text-sm font-semibold transition hover:bg-slate-200">HVAC</button>
         <button data-filter="civil" class="home-filter-btn px-4 py-2 bg-slate-100 text-slate-600 rounded-full text-sm font-semibold transition hover:bg-slate-200">Civil</button>
         <button data-filter="structure" class="home-filter-btn px-4 py-2 bg-slate-100 text-slate-600 rounded-full text-sm font-semibold transition hover:bg-slate-200">Structure</button>
@@ -540,7 +539,7 @@ const downloads = [
         <div>
           <h2 class="text-brand-gold font-bold uppercase tracking-widest text-sm mb-2">Get In Touch</h2>
           <h3 class="text-3xl font-bold mb-6">Contact Information</h3>
-          <p class="text-blue-200 mb-8">Ready to discuss your facility needs? Contact our team for a consultation regarding HVAC, Waste Water, or General Engineering.</p>
+          <p class="text-blue-200 mb-8">Ready to discuss your facility needs? Contact our team for a consultation regarding HVAC, Waste Treatment, or General Engineering.</p>
 
           <div class="space-y-6">
             <div class="flex items-start">
@@ -559,7 +558,8 @@ const downloads = [
               </div>
               <div class="ml-4">
                 <h4 class="font-bold">Phone / WhatsApp</h4>
-                <p class="text-blue-200 text-sm">+62 822-9868-3313</p>
+                <p class="text-blue-200 text-sm">PT. Toolmate Enviro Indonesia: +62 813-7419-3883</p>
+                <p class="text-blue-200 text-sm">PT. Toolmate Technologies Indonesia: +62 822-9868-3313</p>
               </div>
             </div>
 
@@ -569,7 +569,8 @@ const downloads = [
               </div>
               <div class="ml-4">
                 <h4 class="font-bold">Email</h4>
-                <p class="text-blue-200 text-sm">toolmate.pttti@gmail.com</p>
+                <p class="text-blue-200 text-sm">PT. Toolmate Enviro Indonesia: toolmateenviro@gmail.com</p>
+                <p class="text-blue-200 text-sm">PT. Toolmate Technologies Indonesia: toolmate.pttti@gmail.com</p>
               </div>
             </div>
           </div>

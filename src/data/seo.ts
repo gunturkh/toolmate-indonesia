@@ -35,20 +35,20 @@ export const siteConfig = {
 
 // Default SEO for all pages
 export const defaultSEO: SEOData = {
-  title: 'HVAC & WWTP Specialist in Batam',
+  title: 'HVAC & WTP Specialist in Batam',
   description:
-    'PT Toolmate Technologies Indonesia - Your trusted partner for HVAC systems, Waste Water Treatment Plants (WWTP), industrial fabrication, and M&E engineering in Batam, Indonesia. Serving manufacturing industries since 2016.',
+    'PT Toolmate Enviro Indonesia - Your trusted partner for HVAC systems, Waste Treatment Plants (WTP), industrial fabrication, and M&E engineering in Batam, Indonesia. Serving manufacturing industries since 2016.',
   keywords: [
     'HVAC Batam',
-    'WWTP Batam',
-    'waste water treatment',
+    'WTP Batam',
+    'waste treatment plant',
     'industrial HVAC',
     'M&E contractor Batam',
     'clean room systems',
     'ducting fabrication',
     'water treatment plant',
     'general contractor Batam',
-    'PT Toolmate Indonesia',
+    'PT Toolmate Enviro Indonesia',
     'industrial engineering Batam',
     'MBR system',
     'MBBR system',
@@ -59,9 +59,9 @@ export const defaultSEO: SEOData = {
 // Page-specific SEO overrides
 export const pageSEO: Record<string, SEOData> = {
   home: {
-    title: 'HVAC & WWTP Specialist in Batam',
+    title: 'HVAC & WTP Specialist in Batam',
     description:
-      'PT Toolmate Technologies Indonesia - Leading provider of HVAC systems, Waste Water Treatment (WWTP), and industrial M&E solutions in Batam. 8+ years experience serving multinational clients.',
+      'PT Toolmate Enviro Indonesia - Leading provider of HVAC systems, Waste Treatment Plants (WTP), and industrial M&E solutions in Batam. Serving multinational clients since 2016.',
     keywords: [
       ...defaultSEO.keywords!,
       'industrial solutions Batam',
@@ -70,12 +70,12 @@ export const pageSEO: Record<string, SEOData> = {
   },
 
   services: {
-    title: 'Engineering Services - HVAC, WWTP, M&E',
+    title: 'Engineering Services - HVAC, WTP, M&E',
     description:
-      'Comprehensive industrial engineering services: HVAC & MVAC systems, Waste Water Treatment Plants, ducting fabrication, clean room systems, and general contracting in Batam Indonesia.',
+      'Comprehensive industrial engineering services: HVAC & MVAC systems, Waste Treatment Plants, ducting fabrication, clean room systems, and general contracting in Batam Indonesia.',
     keywords: [
       'HVAC services Batam',
-      'WWTP design',
+      'WTP design',
       'ducting installation',
       'cooling tower service',
       'exhaust duct systems',
@@ -88,11 +88,11 @@ export const pageSEO: Record<string, SEOData> = {
   products: {
     title: 'Biology Genesis - Natural Wastewater Treatment',
     description:
-      'Biology Genesis - Natural bio-technology solution for industrial waste water treatment. Safe, non-toxic bacterial culture for WWTP, STP, and grease traps.',
+      'Biology Genesis - Natural bio-technology solution for industrial waste water treatment. Safe, non-toxic bacterial culture for WTP, STP, and grease traps.',
     keywords: [
       'Biology Genesis',
       'bio wastewater treatment',
-      'natural WWTP solution',
+      'natural WTP solution',
       'bacterial water treatment',
       'grease trap treatment',
       'STP bacteria',
@@ -105,12 +105,12 @@ export const pageSEO: Record<string, SEOData> = {
   projects: {
     title: 'Project References & Portfolio',
     description:
-      'View our completed projects for multinational clients including Caterpillar, Panasonic, Yokogawa, and more. HVAC, WWTP, civil works, and M&E installations in Batam.',
+      'View our completed projects for multinational clients including Caterpillar, Panasonic, Yokogawa, and more. HVAC, WTP, civil works, and M&E installations in Batam.',
     keywords: [
       'Toolmate projects',
       'industrial projects Batam',
       'HVAC project reference',
-      'WWTP installation',
+      'WTP installation',
       'Caterpillar contractor',
       'Panasonic contractor Batam',
     ],

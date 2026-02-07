@@ -1,7 +1,7 @@
 {
   "slug": "swissbel-hotel-harbourbay",
   "image": "/images/projects/swissbel-hotel-stp-1.png",
-  "badge": "WWTP",
+  "badge": "WTP",
   "badgeColor": "bg-green-600",
   "title": "Swissbel Hotel Harbourbay",
   "subtitle": "STP Project (Lamela & MBBR System)",
@@ -17,5 +17,5 @@
   "client": "Swissbel Hotel Harbourbay",
   "location": "Batam, Indonesia",
   "year": "2023",
-  "category": "wwtp"
+  "category": "wtp"
 }

@@ -5,6 +5,7 @@ interface Props {
 }
 
 const { showSocial = false, flexGrow = false } = Astro.props;
+const currentYear = new Date().getFullYear();
 ---
 
 <footer class:list={["bg-slate-900 border-t border-slate-800 text-slate-400 py-12", { "mt-auto": flexGrow }]}>
@@ -34,7 +35,13 @@ const { showSocial = false, flexGrow = false } = Astro.props;
       <!-- Contact Info -->
       <div class="text-center md:text-left lg:pt-[68px]">
         <h4 class="text-white font-bold mb-3">Contact</h4>
+        <p class="text-sm leading-relaxed mb-2">
+          <span class="text-white font-semibold text-xs">PT. Toolmate Enviro Indonesia</span><br>
+          <i class="fas fa-phone mr-2 text-brand-gold"></i>+62 813-7419-3883<br>
+          <i class="fas fa-envelope mr-2 text-brand-gold"></i>toolmateenviro@gmail.com
+        </p>
         <p class="text-sm leading-relaxed">
+          <span class="text-white font-semibold text-xs">PT. Toolmate Technologies Indonesia</span><br>
           <i class="fas fa-phone mr-2 text-brand-gold"></i>+62 822-9868-3313<br>
           <i class="fas fa-envelope mr-2 text-brand-gold"></i>toolmate.pttti@gmail.com
         </p>
@@ -44,7 +51,7 @@ const { showSocial = false, flexGrow = false } = Astro.props;
         <h4 class="text-white font-bold mb-3">Our Services</h4>
         <p class="text-sm leading-relaxed">
           HVAC & MVAC Systems<br>
-          Waste Water Treatment (WWTP)<br>
+          Waste Treatment Plant (WTP)<br>
           General Contractor & Fabrication
         </p>
       </div>
@@ -52,7 +59,7 @@ const { showSocial = false, flexGrow = false } = Astro.props;
 
     <!-- Copyright & Social -->
     <div class="border-t border-slate-800 pt-6 text-center sm:flex sm:justify-between sm:items-center">
-      <p class="text-sm">&copy; 2025 PT Toolmate Technologies Indonesia. All rights reserved.</p>
+      <p class="text-sm">&copy; {currentYear} PT Toolmate Technologies Indonesia. All rights reserved.</p>
       {showSocial && (
         <div class="flex justify-center space-x-6 mt-4 sm:mt-0">
           <a href="#" class="hover:text-white transition"><i class="fab fa-facebook"></i></a>

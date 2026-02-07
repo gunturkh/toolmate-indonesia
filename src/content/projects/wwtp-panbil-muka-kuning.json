@@ -1,12 +1,12 @@
 {
   "slug": "wwtp-panbil-muka-kuning",
   "image": "/images/projects/wwtp-panbil-muka-kuning-1.png",
-  "badge": "WWTP",
+  "badge": "WTP",
   "badgeColor": "bg-green-600",
-  "title": "WWTP Panbil",
+  "title": "WTP Panbil",
   "subtitle": "Proyek Kapasitas Process",
-  "description": "Waste Water Treatment Plant capacity process project at Muka Kuning industrial area.",
-  "fullDescription": "PT Toolmate Technologies Indonesia completed a WWTP capacity process project at Panbil, Muka Kuning - Batam. The project involved construction and installation of wastewater treatment infrastructure including underground piping systems, treatment tanks, and processing equipment for industrial wastewater management.",
+  "description": "Waste Treatment Plant capacity process project at Muka Kuning industrial area.",
+  "fullDescription": "PT Toolmate Technologies Indonesia completed a WTP capacity process project at Panbil, Muka Kuning - Batam. The project involved construction and installation of wastewater treatment infrastructure including underground piping systems, treatment tanks, and processing equipment for industrial wastewater management.",
   "scope": [
     "Treatment tank construction",
     "Underground piping installation",
@@ -14,8 +14,8 @@
     "Civil works and earthworks",
     "System commissioning"
   ],
-  "client": "WWTP Panbil",
+  "client": "WTP Panbil",
   "location": "Muka Kuning, Batam, Indonesia",
   "year": "2022",
-  "category": "wwtp"
+  "category": "wtp"
 }

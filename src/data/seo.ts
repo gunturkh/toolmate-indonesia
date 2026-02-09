@@ -25,7 +25,7 @@ export const siteConfig = {
   phone: '+62 822-9868-3313',
   email: 'toolmate.pttti@gmail.com',
   address: {
-    street: 'Jl. Nagoya Hill Blok R3 No 6-7, Lubuk Baja Kota, Kec. Lubuk Baja',
+    street: 'Ruko Nagoya Hill Blok R3 No 6-7, Lubuk Baja Kota, Kec. Lubuk Baja',
     city: 'Kota Batam',
     region: 'Kepulauan Riau',
     postalCode: '29444',

@@ -1,7 +1,7 @@
 {
   "slug": "satnusa-persada",
   "image": "/images/projects/satnusa-persada-1.png",
-  "badge": "WTP",
+  "badge": "WWTP",
   "badgeColor": "bg-green-600",
   "title": "PT. Satnusa Persada Tbk",
   "subtitle": "Kapasitas Process Project",
@@ -17,5 +17,5 @@
   "client": "PT. Satnusa Persada Tbk",
   "location": "Pelita, Batam, Indonesia",
   "year": "2023",
-  "category": "wtp"
+  "category": "wwtp"
 }

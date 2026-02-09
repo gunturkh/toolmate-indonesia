@@ -1,7 +1,7 @@
 {
   "slug": "menara-aria-harbourbay",
   "image": "/images/projects/menara-aria-stp-1.png",
-  "badge": "WTP",
+  "badge": "WWTP",
   "badgeColor": "bg-green-600",
   "title": "Menara Aria Harbourbay Downtown",
   "subtitle": "STP Project",
@@ -17,5 +17,5 @@
   "client": "Menara Aria Harbourbay Downtown",
   "location": "Batam, Indonesia",
   "year": "2023",
-  "category": "wtp"
+  "category": "wwtp"
 }

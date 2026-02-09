@@ -1,14 +1,14 @@
 {
   "slug": "panbil-industrial-park",
   "image": "/images/projects/wwtp-panbil-industrial-park-1.png",
-  "badge": "WTP",
+  "badge": "WWTP",
   "badgeColor": "bg-green-600",
   "title": "Panbil Industrial Park",
-  "subtitle": "WTP Expansion",
+  "subtitle": "WWTP Expansion",
   "description": "Capacity expansion project utilizing MBR & MBBR systems for industrial wastewater management.",
-  "fullDescription": "PT Toolmate Technologies Indonesia successfully completed the WTP (Waste Treatment Plant) expansion project at Panbil Industrial Park. This project involved upgrading the existing facility to handle increased industrial wastewater capacity from the growing number of tenants in the industrial estate.",
+  "fullDescription": "PT Toolmate Technologies Indonesia successfully completed the WWTP (Waste Water Treatment Plant) expansion project at Panbil Industrial Park. This project involved upgrading the existing facility to handle increased industrial wastewater capacity from the growing number of tenants in the industrial estate.",
   "scope": [
-    "Design and engineering of expanded WTP capacity",
+    "Design and engineering of expanded WWTP capacity",
     "Installation of MBR (Membrane Bioreactor) systems",
     "Implementation of MBBR (Moving Bed Biofilm Reactor) technology",
     "Piping and civil works for new treatment tanks",
@@ -17,5 +17,5 @@
   "client": "Panbil Industrial Park",
   "location": "Batam, Indonesia",
   "year": "2022",
-  "category": "wtp"
+  "category": "wwtp"
 }

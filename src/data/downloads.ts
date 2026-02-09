@@ -72,7 +72,7 @@ export const downloads = {
 
   wtpCatalogue: {
     id: "wtp-catalogue",
-    title: "WTP Solutions Catalogue",
+    title: "WWTP Solutions Catalogue",
     subtitle: "PDF Document",
     url: COMPANY_PROFILE_URL,
     icon: "fa-file-pdf",

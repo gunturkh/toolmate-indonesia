@@ -1,7 +1,7 @@
 {
   "slug": "pulau-sambu-daf",
   "image": "/images/projects/pulau-sambu-daf.png",
-  "badge": "WTP",
+  "badge": "WWTP",
   "badgeColor": "bg-green-600",
   "title": "PT. Pulau Sambu",
   "subtitle": "DAF System",
@@ -17,5 +17,5 @@
   "client": "PT. Pulau Sambu",
   "location": "Guntung, Indonesia",
   "year": "2023",
-  "category": "wtp"
+  "category": "wwtp"
 }
